@@ -2,29 +2,43 @@
   description = "Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixGL = {
+      url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, nixGL, catppuccin, ... }:
     let
       # lib = nixpkgs.lib;
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      overlays = [nixGL.overlay];
+      pkgs = import nixpkgs {
+        inherit system overlays;
+        config.allowUnfree = allowUnfree;
+        config.allowUnfreePredicate = allowUnfreePredicate;
+      };
     in {
       homeConfigurations = {
         lemuel = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+
+          extraSpecialArgs = { inherit inputs overlays allowUnfree; };
+
           modules = [
             ./home.nix
-            # ./modules/desktop.nix
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
           ];
         };
       };
