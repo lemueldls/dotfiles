@@ -1,8 +1,12 @@
-{ config, lib, pkgs, inputs, overlays, allowUnfree, ... }: {
+{ config, lib, pkgs, inputs, overlays, allowUnfree, ... }:
+let
+  username = "lemuel";
+  homeDirectory = "/home/" + username;
+in {
   imports = [ ./modules/desktop.nix ];
 
   lib.meta = {
-    homePath = "/home/lemuel/Projects/dotfiles/home";
+    homePath = "${homeDirectory}/Projects/dotfiles/home";
     mkMutableSymlink = path: config.lib.file.mkOutOfStoreSymlink
       (config.lib.meta.homePath + lib.removePrefix (toString inputs.self) (toString path));
   };
@@ -35,11 +39,8 @@
     };
   };
 
-  home = rec {
-    # Home Manager needs a bit of information about you and the paths it should
-    # manage.
-    username = "lemuel";
-    homeDirectory = "/home/" + username;
+  home = {
+    inherit username homeDirectory;
 
     shell.enableShellIntegration = true;
 
@@ -77,7 +78,7 @@
         kdePackages.qtwayland
         kdePackages.qtsvg
         kdePackages.qt6ct
-        kdePackages.qtstyleplugin-kvantum
+        # kdePackages.qtstyleplugin-kvantum
         # libsForQt5.qt5ct
         # catppuccin-qt5ct
         kdePackages.dolphin
@@ -87,7 +88,9 @@
 
         # (catppuccin-kvantum.override { accent = "teal"; variant = "mocha"; })
 
-        (config.lib.nixGL.wrap steam)
+        # (config.lib.nixGL.wrap steam)
+
+        # metar # TODO: automatically set station?
     ];
 
     file = with config.lib.meta; {
@@ -111,6 +114,8 @@
         ".config/qt5ct".source = mkMutableSymlink ./.config/qt5ct;
         ".config/qt6ct".source = mkMutableSymlink ./.config/qt6ct;
         # ".config/starship.toml".source = mkMutableSymlink ./.config/starship.toml;
+
+        ".fonts".source = mkMutableSymlink ./.fonts;
 
         ".local/bin".source = mkMutableSymlink ./.local/bin;
         ".local/share/glib-2.0/schemas".source = mkMutableSymlink ./.local/share/glib-2.0/schemas;
@@ -147,25 +152,10 @@
         frequency = "weekly";
       };
     };
-
-    # linux-wallpaperengine = {
-    #   enable = true;
-    #   package = (config.lib.nixGL.wrap pkgs.linux-wallpaperengine);
-    #   clamping = "clamp";
-    #   assetsPath = "${home.homeDirectory}/.local/share/Steam/steamapps/common/wallpaper_engine/assets";
-    #   wallpapers = [
-    #     { # https://steamcommunity.com/sharedfiles/filedetails/?id=3371368351&searchtext=catppuccin
-    #       monitor = "DP-1";
-    #       wallpaperId = "3371368351";
-    #       fps = 60;
-    #       audio.silent = true;
-    #     }
-    #   ];
-    # };
   };
 
-  qt = {
-    platformTheme.name = "qtct";
-    style.name = "kvantum";
-  };
+  # qt = {
+  #   platformTheme.name = "qtct";
+  #   style.name = "kvantum";
+  # };
 }
