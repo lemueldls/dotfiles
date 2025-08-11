@@ -1,5 +1,11 @@
-{ config, pkgs, inputs, overlays, allowUnfree, ... }: {
+{ config, lib, pkgs, inputs, overlays, allowUnfree, ... }: {
   imports = [ ./modules/desktop.nix ];
+
+  lib.meta = {
+    homePath = "/home/lemuel/Projects/dotfiles/home";
+    mkMutableSymlink = path: config.lib.file.mkOutOfStoreSymlink
+      (config.lib.meta.homePath + lib.removePrefix (toString inputs.self) (toString path));
+  };
 
   nix = {
     package = pkgs.nix;
@@ -47,12 +53,12 @@
     stateVersion = "25.05"; # Please read the comment before changing.
 
     preferXdgDirectories = true;
-    # pointerCursor = {
-    #   gtk.enable = true;
-    #   package = pkgs.qogir-icon-theme;
-    #   name = "Qogir";
-    #   size = 24;
-    # };
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.qogir-icon-theme;
+      name = "Qogir";
+      size = 24;
+    };
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
@@ -82,27 +88,35 @@
         # (catppuccin-kvantum.override { accent = "teal"; variant = "mocha"; })
 
         (config.lib.nixGL.wrap steam)
-
-        moonfire-nvr
     ];
 
-    # Home Manager is pretty good at managing dotfiles. The primary way to manage
-    # plain files is through 'home.file'.
-    file = {
-        # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-        # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-        # # symlink to the Nix store copy.
-        # ".screenrc".source = dotfiles/screenrc;
+    file = with config.lib.meta; {
+        # ".ags" = { source = ./home/.local; recursive = true; };
 
-        ".config/kitty/kitty.conf".source = ./home/.config/kitty/kitty.conf;
+        ".config/ags".source = mkMutableSymlink ./.config/ags;
+        ".config/btop".source = mkMutableSymlink ./.config/btop;
+        # ".config/fish".source = mkMutableSymlink ./.config/fish;
+        ".config/fastfetch".source = mkMutableSymlink ./.config/fastfetch;
+        # ".config/fontconfig".source = mkMutableSymlink ./.config/fontconfig;
+        ".config/foot".source = mkMutableSymlink ./.config/foot;
+        ".config/ghostty".source = mkMutableSymlink ./.config/ghostty;
+        ".config/gowall".source = mkMutableSymlink ./.config/gowall;
+        ".config/gtk-3.0".source = mkMutableSymlink ./.config/gtk-3.0;
+        ".config/gtk-4.0".source = mkMutableSymlink ./.config/gtk-4.0;
+        ".config/hypr".source = mkMutableSymlink ./.config/hypr;
+        ".config/kitty".source = mkMutableSymlink ./.config/kitty;
+        ".config/lunarfetch".source = mkMutableSymlink ./.config/lunarfetch;
+        ".config/matugen".source = mkMutableSymlink ./.config/matugen;
+        ".config/presets".source = mkMutableSymlink ./.config/presets;
+        ".config/qt5ct".source = mkMutableSymlink ./.config/qt5ct;
+        ".config/qt6ct".source = mkMutableSymlink ./.config/qt6ct;
+        # ".config/starship.toml".source = mkMutableSymlink ./.config/starship.toml;
 
-        # "Pictures/Wallpapers".source = ./home/Pictures/Wallpapers;
+        ".local/bin".source = mkMutableSymlink ./.local/bin;
+        ".local/share/glib-2.0/schemas".source = mkMutableSymlink ./.local/share/glib-2.0/schemas;
+        ".local/state/ags".source = mkMutableSymlink ./.local/state/ags;
 
-        # # You can also set the file content immediately.
-        # ".gradle/gradle.properties".text = ''
-        #   org.gradle.console=verbose
-        #   org.gradle.daemon.idletimeout=3600000
-        # '';
+        "Pictures/Wallpapers".source = mkMutableSymlink ./Pictures/Wallpapers;
     };
 
     sessionVariables = {
