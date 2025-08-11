@@ -2,9 +2,12 @@
   description = "Home Manager configuration";
 
   inputs = {
+    self.submodules = true;
+
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
+      flake = true;
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };

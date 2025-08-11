@@ -10,7 +10,7 @@
         # (nerdfonts.override { fonts = [ iosevka.term ]; })
         # recursive
         noto-fonts-cjk-sans
-        # noto-fonts-color-emoji
+        noto-fonts-color-emoji
         # symbola
     ];
 
@@ -20,14 +20,17 @@
       serif = [
         "Iosevka Book"
         "Noto Sans CJK SC"
+        "Noto Color Emoji"
       ];
       sansSerif = [
         "Iosevka Book"
         "Noto Sans CJK SC"
+        "Noto Color Emoji"
       ];
       monospace = [
         "Iosevka Code"
         "Noto Sans Mono CJK SC"
+        "Noto Color Emoji"
       ];
     };
   };

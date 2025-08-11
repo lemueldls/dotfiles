@@ -47,12 +47,12 @@
     stateVersion = "25.05"; # Please read the comment before changing.
 
     preferXdgDirectories = true;
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.qogir-icon-theme;
-      name = "Qogir";
-      size = 22;
-    };
+    # pointerCursor = {
+    #   gtk.enable = true;
+    #   package = pkgs.qogir-icon-theme;
+    #   name = "Qogir";
+    #   size = 24;
+    # };
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
@@ -60,7 +60,7 @@
         # (config.lib.nixGl.wrapOffload )
         # (config.lib.nixGl.wrappers. )
 
-        # nix
+        nix
         nil
         nixd
         nixfmt-rfc-style
@@ -79,9 +79,11 @@
 
         nwg-look
 
-        (catppuccin-kvantum.override { accent = "teal"; variant = "mocha"; })
+        # (catppuccin-kvantum.override { accent = "teal"; variant = "mocha"; })
 
         (config.lib.nixGL.wrap steam)
+
+        moonfire-nvr
     ];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -92,7 +94,9 @@
         # # symlink to the Nix store copy.
         # ".screenrc".source = dotfiles/screenrc;
 
-        "Pictures/wallpapers".source = ./wallpapers;
+        ".config/kitty/kitty.conf".source = ./home/.config/kitty/kitty.conf;
+
+        # "Pictures/Wallpapers".source = ./home/Pictures/Wallpapers;
 
         # # You can also set the file content immediately.
         # ".gradle/gradle.properties".text = ''
