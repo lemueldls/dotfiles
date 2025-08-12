@@ -1,3 +1,9 @@
 [submodule "home"]
 	path = home
 	url = git@github.com:lemueldls/home.git
+[submodule "config"]
+	path = config
+	url = git@github.com:lemueldls/config.git
+[submodule "shell"]
+	path = shell
+	url = git@github.com:lemueldls/shell.git
