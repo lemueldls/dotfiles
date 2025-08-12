@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync_submodules:
+  sync:
     permissions:
       contents: write
     runs-on: ubuntu-latest
