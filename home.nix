@@ -5,8 +5,6 @@
   inputs,
   overlays,
   allowUnfree,
-  caelestia-cli,
-  caelestia-shell,
   ...
 }:
 let
@@ -95,10 +93,6 @@ in
 
       # Build tools
       just
-
-      # Desktop
-      (config.lib.nixGL.wrap caelestia-cli.packages.x86_64-linux.default)
-      (config.lib.nixGL.wrap caelestia-shell.packages.x86_64-linux.default)
 
       # KDE Packages
       kdePackages.qtwayland

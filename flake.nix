@@ -71,6 +71,7 @@
           modules = [
             ./home.nix
             catppuccin.homeModules.catppuccin
+            caelestia-shell.homeManagerModules.default
           ];
         };
       };
