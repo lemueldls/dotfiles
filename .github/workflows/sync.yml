@@ -29,5 +29,5 @@ jobs:
         run: |
           git submodule update --init --recursive --remote
           git add -A
-          git commit -S -m "chore: sync submodules"
+          git commit -S -m "chore: sync submodules" || echo "No changes to commit"
           git push
