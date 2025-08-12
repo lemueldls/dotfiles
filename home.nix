@@ -1,14 +1,28 @@
-{ config, lib, pkgs, inputs, overlays, allowUnfree, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  overlays,
+  allowUnfree,
+  caelestia-cli,
+  caelestia-shell,
+  ...
+}:
 let
   username = "lemuel";
   homeDirectory = "/home/" + username;
-in {
+in
+{
   imports = [ ./modules/desktop.nix ];
 
   lib.meta = {
-    homePath = "${homeDirectory}/Projects/dotfiles/home";
-    mkMutableSymlink = path: config.lib.file.mkOutOfStoreSymlink
-      (config.lib.meta.homePath + lib.removePrefix (toString inputs.self) (toString path));
+    dotfilesPath = "${homeDirectory}/Projects/dotfiles";
+    mkMutableSymlink =
+      path:
+      config.lib.file.mkOutOfStoreSymlink (
+        config.lib.meta.dotfilesPath + lib.removePrefix (toString inputs.self) (toString path)
+      );
   };
 
   nix = {
@@ -21,10 +35,18 @@ in {
 
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
 
       substituters = [ "https://cache.nixos.org" ];
-      trusted-users = [ "root" "lemuel" "@wheel" "nixbld" ];
+      trusted-users = [
+        "root"
+        "lemuel"
+        "@wheel"
+        "nixbld"
+      ];
       trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
       extra-substituters = [
         # "https://hyprland.cachix.org"
@@ -64,64 +86,50 @@ in {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     packages = with pkgs; [
-        # (config.lib.nixGl.wrapOffload )
-        # (config.lib.nixGl.wrappers. )
+      # Nix
+      nix
+      nil
+      nixd
+      nixfmt-rfc-style
+      devenv
 
-        nix
-        nil
-        nixd
-        nixfmt-rfc-style
-        devenv
+      # Build tools
+      just
 
-        just
+      # Desktop
+      (config.lib.nixGL.wrap caelestia-cli.packages.x86_64-linux.default)
+      (config.lib.nixGL.wrap caelestia-shell.packages.x86_64-linux.default)
 
-        kdePackages.qtwayland
-        kdePackages.qtsvg
-        kdePackages.qt6ct
-        # kdePackages.qtstyleplugin-kvantum
-        # libsForQt5.qt5ct
-        # catppuccin-qt5ct
-        kdePackages.dolphin
-        # libsForQt5.dolphin
+      # KDE Packages
+      kdePackages.qtwayland
+      kdePackages.qtsvg
+      kdePackages.qt6ct
+      kdePackages.dolphin
 
-        nwg-look
+      kdePackages.dolphin
 
-        # (catppuccin-kvantum.override { accent = "teal"; variant = "mocha"; })
-
-        # (config.lib.nixGL.wrap steam)
-
-        # metar # TODO: automatically set station?
+      # (config.lib.nixGL.wrap steam)
     ];
 
     file = with config.lib.meta; {
-        # ".ags" = { source = ./home/.local; recursive = true; };
+      ".config/btop".source = mkMutableSymlink ./configs/btop;
+      ".config/fastfetch".source = mkMutableSymlink ./configs/fastfetch;
+      ".config/firefox".source = mkMutableSymlink ./configs/firefox;
+      # ".config/fish".source = mkMutableSymlink ./configs/fish;
+      # ".config/foot".source = mkMutableSymlink ./.config/foot;
+      ".config/hypr".source = mkMutableSymlink ./configs/hypr;
+      # ".config/micro".source = mkMutableSymlink ./configs/micro;
+      ".config/spicetify".source = mkMutableSymlink ./configs/spicetify;
+      ".config/thunar".source = mkMutableSymlink ./configs/thunar;
+      ".config/uwsm".source = mkMutableSymlink ./configs/uwsm;
+      # ".config/vscode/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
+      # ".config/vscode/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
+      # ".config/vscode/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
+      # ".config/zed".source = mkMutableSymlink ./configs/zed;
+      ".config/zen/userChrome.css".source = mkMutableSymlink ./configs/zen/userChrome.css;
+      # ".config/starship.toml".source = mkMutableSymlink ./configs/starship.toml;
 
-        ".config/ags".source = mkMutableSymlink ./.config/ags;
-        ".config/btop".source = mkMutableSymlink ./.config/btop;
-        # ".config/fish".source = mkMutableSymlink ./.config/fish;
-        ".config/fastfetch".source = mkMutableSymlink ./.config/fastfetch;
-        # ".config/fontconfig".source = mkMutableSymlink ./.config/fontconfig;
-        ".config/foot".source = mkMutableSymlink ./.config/foot;
-        ".config/ghostty".source = mkMutableSymlink ./.config/ghostty;
-        ".config/gowall".source = mkMutableSymlink ./.config/gowall;
-        ".config/gtk-3.0".source = mkMutableSymlink ./.config/gtk-3.0;
-        ".config/gtk-4.0".source = mkMutableSymlink ./.config/gtk-4.0;
-        ".config/hypr".source = mkMutableSymlink ./.config/hypr;
-        ".config/kitty".source = mkMutableSymlink ./.config/kitty;
-        ".config/lunarfetch".source = mkMutableSymlink ./.config/lunarfetch;
-        ".config/matugen".source = mkMutableSymlink ./.config/matugen;
-        ".config/presets".source = mkMutableSymlink ./.config/presets;
-        ".config/qt5ct".source = mkMutableSymlink ./.config/qt5ct;
-        ".config/qt6ct".source = mkMutableSymlink ./.config/qt6ct;
-        # ".config/starship.toml".source = mkMutableSymlink ./.config/starship.toml;
-
-        ".fonts".source = mkMutableSymlink ./.fonts;
-
-        ".local/bin".source = mkMutableSymlink ./.local/bin;
-        ".local/share/glib-2.0/schemas".source = mkMutableSymlink ./.local/share/glib-2.0/schemas;
-        ".local/state/ags".source = mkMutableSymlink ./.local/state/ags;
-
-        "Pictures/Wallpapers".source = mkMutableSymlink ./Pictures/Wallpapers;
+      "Pictures/Wallpapers".source = mkMutableSymlink ./wallpapers;
     };
 
     sessionVariables = {

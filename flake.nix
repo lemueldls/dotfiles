@@ -18,26 +18,55 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
+
+    caelestia-cli = {
+      url = ./cli;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-shell = {
+      url = ./shell;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixGL, catppuccin, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      nixGL,
+      catppuccin,
+      caelestia-cli,
+      caelestia-shell,
+      ...
+    }:
     let
       # lib = nixpkgs.lib;
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
       system = "x86_64-linux";
-      overlays = [nixGL.overlay];
+      overlays = [ nixGL.overlay ];
       pkgs = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = allowUnfree;
         config.allowUnfreePredicate = allowUnfreePredicate;
       };
-    in {
+    in
+    {
       homeConfigurations = {
         lemuel = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
-          extraSpecialArgs = { inherit inputs overlays allowUnfree; };
+          extraSpecialArgs = {
+            inherit
+              inputs
+              overlays
+              allowUnfree
+              caelestia-cli
+              caelestia-shell
+              ;
+          };
 
           modules = [
             ./home.nix

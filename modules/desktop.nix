@@ -1,3 +1,8 @@
-{ ... }: {
-  imports = [ ./theme.nix ./fonts.nix ./programs.nix ];
+{ ... }:
+{
+  imports = [
+    # ./theme.nix
+    ./fonts.nix
+    ./programs.nix
+  ];
 }
