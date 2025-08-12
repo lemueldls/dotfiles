@@ -1,0 +1,33 @@
+name: Sync
+
+on:
+  schedule:
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update_version:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH signing key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_SIGNING_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          git config --global gpg.format ssh
+          git config --global user.signingKey ~/.ssh/id_ed25519
+          git config --global user.name "Lemuel DLS"
+          git config --global user.email "26912197+lemueldls@users.noreply.github.com"
+
+      - name: Sync submodules
+        run: |
+          git submodule update --init --recursive --remote
+          git add -A
+          git commit -S -m "chore: sync submodules"
+          git push
