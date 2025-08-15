@@ -1,4 +1,10 @@
-{ nerd-font-patcher, parallel, stdenv }: font: stdenv.mkDerivation {
+{
+  nerd-font-patcher,
+  parallel,
+  stdenv,
+}:
+font:
+stdenv.mkDerivation {
   name = "${font.name}-nerd-font-patched";
   src = font;
   buildPhase = ''

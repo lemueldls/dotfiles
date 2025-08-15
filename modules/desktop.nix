@@ -1,8 +1,15 @@
 { ... }:
 {
   imports = [
-    # ./theme.nix
-    ./fonts.nix
-    ./programs.nix
+    ./fonts
+    ./programs
   ];
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "teal";
+
+    vscode.enable = false;
+  };
 }

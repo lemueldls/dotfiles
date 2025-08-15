@@ -5,9 +5,9 @@
 }:
 {
   imports = [
-    ./programs/git.nix
-    ./programs/caelestia.nix
-    ./programs/vscode.nix
+    ./git.nix
+    ./caelestia.nix
+    ./vscode.nix
   ];
 
   programs = {
@@ -71,17 +71,18 @@
     };
 
     kitty = {
-      enable = false;
+      enable = true;
       font.name = "Iosevka Custom";
-      package = (config.lib.nixGL.wrap pkgs.kitty);
+      package = config.lib.nixGL.wrap pkgs.kitty;
       settings = {
         window_padding_width = 8;
+        cursor_trail = 1;
       };
     };
 
     wezterm = {
       enable = true;
-      package = (config.lib.nixGL.wrap pkgs.wezterm);
+      package = config.lib.nixGL.wrap pkgs.wezterm;
       extraConfig = ''
         return {
           font_size = 11.0,
@@ -94,7 +95,7 @@
 
     quickshell = {
       enable = true;
-      package = (config.lib.nixGL.wrap pkgs.quickshell);
+      package = config.lib.nixGL.wrap pkgs.quickshell;
     };
 
     zed-editor = {
@@ -119,8 +120,8 @@
 
   wayland.windowManager.hyprland = {
     enable = false;
-    package = (config.lib.nixGL.wrap pkgs.hyprland);
-    portalPackage = (config.lib.nixGL.wrap pkgs.xdg-desktop-portal-hyprland);
+    package = config.lib.nixGL.wrap pkgs.hyprland;
+    portalPackage = config.lib.nixGL.wrap pkgs.xdg-desktop-portal-hyprland;
     plugins = [ ];
     systemd.variables = [ "--all" ];
   };

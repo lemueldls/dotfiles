@@ -86,7 +86,6 @@ in
     packages = with pkgs; [
       # Nix
       nix
-      nil
       nixd
       nixfmt-rfc-style
       devenv
@@ -99,10 +98,6 @@ in
       kdePackages.qtsvg
       kdePackages.qt6ct
       kdePackages.dolphin
-
-      kdePackages.dolphin
-
-      # (config.lib.nixGL.wrap steam)
     ];
 
     file = with config.lib.meta; {
@@ -119,7 +114,8 @@ in
       # ".config/vscode/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
       # ".config/vscode/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
       # ".config/vscode/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
-      # ".config/zed".source = mkMutableSymlink ./configs/zed;
+      ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
+      ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
       ".config/zen/userChrome.css".source = mkMutableSymlink ./configs/zen/userChrome.css;
       # ".config/starship.toml".source = mkMutableSymlink ./configs/starship.toml;
 
@@ -140,7 +136,9 @@ in
 
   nixpkgs = {
     inherit overlays;
-    config = { inherit overlays allowUnfree; };
+    config = {
+      inherit overlays allowUnfree;
+    };
   };
 
   services = {
@@ -155,9 +153,4 @@ in
       };
     };
   };
-
-  # qt = {
-  #   platformTheme.name = "qtct";
-  #   style.name = "kvantum";
-  # };
 }

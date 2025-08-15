@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     # package = (config.lib.nixGL.wrap pkgs.vscode);
@@ -29,7 +30,7 @@
         "workbench.colorTheme" = "Catppuccin Noctis Mocha";
         "workbench.iconTheme" = "catppuccin noctis icons";
         "workbench.sideBar.location" = "right";
-        "workbench.startupEditor" =  "none";
+        "workbench.startupEditor" = "none";
         "explorer.fileNesting.enabled" = true;
         "explorer.fileNesting.expand" = false;
         "editor.tabSize" = 2;
@@ -37,7 +38,9 @@
         "editor.semanticHighlighting.enabled" = true;
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
-        "editor.codeActionsOnSave" = { "source.fixAll.eslint" = "always"; };
+        "editor.codeActionsOnSave" = {
+          "source.fixAll.eslint" = "always";
+        };
         "editor.gotoLocation.multipleDefinitions" = "goto";
         "terminal.integrated.fontFamily" = "'Iosevka Term', 'Noto Sans Mono CJK SC', monospace";
         "terminal.integrated.defaultProfile.linux" = "fish";
@@ -84,22 +87,53 @@
           "*.json" = "jsonc";
         };
         "tailwindCSS.experimental.classRegex" = [
-          [ "([\"'`][^\"'`]*.*?[\"'`])" "[\"'`]([^\"'`]*).*?[\"'`]" ]
+          [
+            "([\"'`][^\"'`]*.*?[\"'`])"
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+          ]
         ];
-        "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[yaml]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[html]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[markdown]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[javascript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[javascriptreact]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[typescript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[typescriptreact]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[css]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[scss]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[less]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[vue]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-        "[rust]" = { "editor.defaultFormatter" = "rust-lang.rust-analyzer"; };
+        "[json]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[jsonc]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[yaml]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[html]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[markdown]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[javascript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[javascriptreact]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescriptreact]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[css]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[scss]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[less]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[vue]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[rust]" = {
+          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+        };
       };
     };
   };

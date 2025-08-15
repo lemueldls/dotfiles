@@ -1,17 +1,20 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs;
+{ pkgs, ... }:
+{
+  home.packages =
+    with pkgs;
     let
-      iosevka = callPackage ./fonts/iosevka.nix { };
-    in [
-        # libre-baskerville
-        iosevka.book
-        iosevka.code
-        (callPackage ./fonts/nerd-font-patch.nix { } iosevka.term)
-        # (nerdfonts.override { fonts = [ iosevka.term ]; })
-        # recursive
-        noto-fonts-cjk-sans
-        noto-fonts-color-emoji
-        # symbola
+      iosevka = callPackage ./iosevka.nix { };
+    in
+    [
+      # libre-baskerville
+      iosevka.book
+      iosevka.code
+      (callPackage ./nerd-font-patch.nix { } iosevka.term)
+      # (nerdfonts.override { fonts = [ iosevka.term ]; })
+      # recursive
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      # symbola
     ];
 
   fonts.fontconfig = {

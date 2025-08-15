@@ -44,13 +44,11 @@
     let
       # lib = nixpkgs.lib;
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
       system = "x86_64-linux";
       overlays = [ nixGL.overlay ];
       pkgs = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = allowUnfree;
-        config.allowUnfreePredicate = allowUnfreePredicate;
       };
     in
     {
@@ -59,13 +57,8 @@
           inherit pkgs;
 
           extraSpecialArgs = {
-            inherit
-              inputs
-              overlays
-              allowUnfree
-              caelestia-cli
-              caelestia-shell
-              ;
+            inherit inputs overlays allowUnfree;
+            inherit caelestia-cli caelestia-shell;
           };
 
           modules = [
