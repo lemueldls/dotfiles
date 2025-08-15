@@ -26,8 +26,10 @@ jobs:
           git config --global user.email "26912197+lemueldls@users.noreply.github.com"
 
       - name: Sync submodules
+        run: git submodule update --init --recursive --remote
+
+      - name: Add and commit changes
         run: |
-          git submodule update --init --recursive --remote
           git add -A
           git commit -S -m "chore: sync submodules" || echo "No changes to commit"
           git push
