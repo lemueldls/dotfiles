@@ -7,7 +7,7 @@
   imports = [
     ./git.nix
     ./caelestia.nix
-    ./vscode.nix
+    # ./vscode.nix
   ];
 
   programs = {
@@ -15,6 +15,7 @@
 
     ssh = {
       enable = true;
+      enableDefaultConfig = false;
     };
 
     jujutsu = {
@@ -47,16 +48,16 @@
       '';
     };
 
-    nushell = {
-      enable = true;
-      shellAliases = {
-        hx = "helix";
-      };
-      settings = {
-        buffer_editor = "helix";
-        show_banner = false;
-      };
-    };
+    # nushell = {
+    #   enable = true;
+    #   shellAliases = {
+    #     hx = "helix";
+    #   };
+    #   settings = {
+    #     buffer_editor = "helix";
+    #     show_banner = false;
+    #   };
+    # };
 
     zoxide = {
       enable = true;
@@ -86,43 +87,48 @@
       extraConfig = ''
         return {
           font_size = 11.0,
-          font = wezterm.font_with_fallback { "Iosevka Term", "Noto Sans Mono CJK" },
+          font = wezterm.font_with_fallback {
+            "Iosevka Term",
+            "Sarasa Term SC",
+            "Sarasa Term J",
+            "Sarasa Term K",
+          },
           color_scheme = "Catppuccin Mocha",
           hide_tab_bar_if_only_one_tab = true,
         }
       '';
     };
 
-    quickshell = {
-      enable = true;
-      package = config.lib.nixGL.wrap pkgs.quickshell;
-    };
+    # quickshell = {
+    #   enable = true;
+    #   package = config.lib.nixGL.wrap pkgs.quickshell;
+    # };
 
-    zed-editor = {
-      enable = false;
-    };
+    # zed-editor = {
+    #   enable = false;
+    # };
 
-    rbenv = {
-      enable = true;
-      plugins = [
-        {
-          name = "ruby-build";
-          src = pkgs.fetchFromGitHub {
-            owner = "rbenv";
-            repo = "ruby-build";
-            rev = "v20250418";
-            hash = "sha256-TSJ8tUu0yS/i9mTaGTsTHefUSkMC6GseeKPpvBvFeXg=";
-          };
-        }
-      ];
-    };
+    # rbenv = {
+    #   enable = true;
+    #   plugins = [
+    #     {
+    #       name = "ruby-build";
+    #       src = pkgs.fetchFromGitHub {
+    #         owner = "rbenv";
+    #         repo = "ruby-build";
+    #         rev = "v20250418";
+    #         hash = "sha256-TSJ8tUu0yS/i9mTaGTsTHefUSkMC6GseeKPpvBvFeXg=";
+    #       };
+    #     }
+    #   ];
+    # };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = false;
-    package = config.lib.nixGL.wrap pkgs.hyprland;
-    portalPackage = config.lib.nixGL.wrap pkgs.xdg-desktop-portal-hyprland;
-    plugins = [ ];
-    systemd.variables = [ "--all" ];
-  };
+  # wayland.windowManager.hyprland = {
+  #   enable = false;
+  #   package = config.lib.nixGL.wrap pkgs.hyprland;
+  #   portalPackage = config.lib.nixGL.wrap pkgs.xdg-desktop-portal-hyprland;
+  #   plugins = [ ];
+  #   systemd.variables = [ "--all" ];
+  # };
 }

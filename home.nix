@@ -5,6 +5,7 @@
   inputs,
   overlays,
   allowUnfree,
+  winapps,
   ...
 }:
 let
@@ -98,6 +99,8 @@ in
       kdePackages.qtsvg
       kdePackages.qt6ct
       kdePackages.dolphin
+
+      winapps
     ];
 
     file = with config.lib.meta; {
@@ -111,9 +114,9 @@ in
       ".config/spicetify".source = mkMutableSymlink ./configs/spicetify;
       ".config/thunar".source = mkMutableSymlink ./configs/thunar;
       ".config/uwsm".source = mkMutableSymlink ./configs/uwsm;
-      # ".config/vscode/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
-      # ".config/vscode/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
-      # ".config/vscode/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
+      ".config/Code/User/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
+      ".config/Code/User/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
+      ".config/Code/User/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
       ".config/zen/userChrome.css".source = mkMutableSymlink ./configs/zen/userChrome.css;
@@ -131,7 +134,7 @@ in
     packages = inputs.nixGL.packages;
     defaultWrapper = "mesa";
     # offloadWrapper = "nvidiaPrime";
-    installScripts = [ "mesa" ];
+    # installScripts = [ "mesa" ];
   };
 
   nixpkgs = {

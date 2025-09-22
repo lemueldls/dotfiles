@@ -5,10 +5,12 @@
     self.submodules = true;
 
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     home-manager = {
-      flake = true;
+      # flake = true;
       url = "github:nix-community/home-manager";
+      # url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -21,11 +23,18 @@
 
     caelestia-cli = {
       url = ./cli;
+      # url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     caelestia-shell = {
       url = ./shell;
+      # url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -39,6 +48,7 @@
       catppuccin,
       caelestia-cli,
       caelestia-shell,
+      winapps,
       ...
     }:
     let
@@ -58,7 +68,7 @@
 
           extraSpecialArgs = {
             inherit inputs overlays allowUnfree;
-            inherit caelestia-cli caelestia-shell;
+            inherit caelestia-cli caelestia-shell winapps;
           };
 
           modules = [

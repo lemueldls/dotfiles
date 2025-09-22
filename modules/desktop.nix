@@ -6,10 +6,8 @@
   ];
 
   catppuccin = {
-    enable = true;
+    enable = false;
     flavor = "mocha";
     accent = "teal";
-
-    vscode.enable = false;
   };
 }

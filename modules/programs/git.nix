@@ -4,7 +4,7 @@
     enable = true;
     userName = "Lemuel DLS";
     userEmail = "26912197+lemueldls@users.noreply.github.com";
-    lfs.enable = true;
+    # lfs.enable = true;
     extraConfig = {
       commit.gpgSign = true;
       safe.directory = "/opt/flutter";

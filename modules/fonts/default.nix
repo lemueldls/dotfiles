@@ -12,7 +12,7 @@
       (callPackage ./nerd-font-patch.nix { } iosevka.term)
       # (nerdfonts.override { fonts = [ iosevka.term ]; })
       # recursive
-      noto-fonts-cjk-sans
+      sarasa-gothic
       noto-fonts-color-emoji
       # symbola
     ];
@@ -22,17 +22,23 @@
     defaultFonts = {
       serif = [
         "Iosevka Book"
-        "Noto Sans CJK SC"
+        "Sarasa Gothic SC"
+        "Sarasa Gothic J"
+        "Sarasa Gothic K"
         "Noto Color Emoji"
       ];
       sansSerif = [
         "Iosevka Book"
-        "Noto Sans CJK SC"
+        "Sarasa Gothic SC"
+        "Sarasa Gothic J"
+        "Sarasa Gothic K"
         "Noto Color Emoji"
       ];
       monospace = [
         "Iosevka Code"
-        "Noto Sans Mono CJK SC"
+        "Sarasa Mono SC"
+        "Sarasa Mono J"
+        "Sarasa Mono K"
         "Noto Color Emoji"
       ];
     };

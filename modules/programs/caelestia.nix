@@ -11,16 +11,20 @@
     settings = {
       appearance = {
         font.family = {
-          sans = "Iosevak Book";
-          mono = "Iosevak Code";
-          clock = "Iosevak Book";
+          sans = "Iosevka Book";
+          mono = "Iosevka Code";
+          clock = "Iosevka Book";
         };
         transparency.enabled = true;
       };
-      general.apps.termial = [
-        "wezterm"
-        "foot"
-      ];
+      general = {
+        apps.termial = [
+          "wezterm"
+          "foot"
+        ];
+
+        idle.lockTimeout = 0;
+      };
       background = {
         desktopClock.enabled = true;
       };
