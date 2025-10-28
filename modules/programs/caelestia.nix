@@ -22,8 +22,6 @@
           "wezterm"
           "foot"
         ];
-
-        idle.lockTimeout = 0;
       };
       background = {
         desktopClock.enabled = true;
