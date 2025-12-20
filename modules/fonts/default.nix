@@ -7,13 +7,14 @@
     in
     [
       # libre-baskerville
-      iosevka.book
-      iosevka.code
+      (callPackage ./nerd-font-patch.nix { } iosevka.book)
+      (callPackage ./nerd-font-patch.nix { } iosevka.code)
       (callPackage ./nerd-font-patch.nix { } iosevka.term)
-      # (nerdfonts.override { fonts = [ iosevka.term ]; })
+      nerd-fonts.symbols-only
       # recursive
       sarasa-gothic
       noto-fonts-color-emoji
+      material-symbols
       # symbola
     ];
 

@@ -2,10 +2,12 @@
 {
   programs.git = {
     enable = true;
-    userName = "Lemuel DLS";
-    userEmail = "26912197+lemueldls@users.noreply.github.com";
     # lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Lemuel DLS";
+        email = "26912197+lemueldls@users.noreply.github.com";
+      };
       commit.gpgSign = true;
       safe.directory = "/opt/flutter";
       gpg.format = "ssh";

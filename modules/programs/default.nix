@@ -5,9 +5,11 @@
 }:
 {
   imports = [
+    # ./hyprland.nix
+    ./niri.nix
     ./git.nix
-    ./caelestia.nix
     # ./vscode.nix
+    # ./caelestia.nix
   ];
 
   programs = {
@@ -40,12 +42,24 @@
           bind ctrl-c __fish_cancel_commandline
         '';
       };
-      interactiveShellInit = ''
-        cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
-      '';
+      # interactiveShellInit = ''
+      #   cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
+      # '';
       loginShellInit = ''
         fnm env --use-on-cd --shell fish | source
       '';
+    };
+
+    tmux = {
+      enable = true;
+      keyMode = "vi";
+      mouse = true;
+      newSession = true;
+    };
+
+    fzf = {
+      enable = true;
+      tmux.enableShellIntegration = true;
     };
 
     # nushell = {
@@ -74,7 +88,7 @@
     kitty = {
       enable = true;
       font.name = "Iosevka Custom";
-      package = config.lib.nixGL.wrap pkgs.kitty;
+      # package = config.lib.nixGL.wrap pkgs.kitty;
       settings = {
         window_padding_width = 8;
         cursor_trail = 1;
@@ -83,7 +97,7 @@
 
     wezterm = {
       enable = true;
-      package = config.lib.nixGL.wrap pkgs.wezterm;
+      # package = config.lib.nixGL.wrap pkgs.wezterm;
       extraConfig = ''
         return {
           font_size = 11.0,
@@ -101,7 +115,7 @@
 
     # quickshell = {
     #   enable = true;
-    #   package = config.lib.nixGL.wrap pkgs.quickshell;
+    #   # package = config.lib.nixGL.wrap pkgs.quickshell;
     # };
 
     # zed-editor = {

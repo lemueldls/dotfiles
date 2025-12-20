@@ -6,7 +6,7 @@
   ];
 
   catppuccin = {
-    enable = false;
+    enable = true;
     flavor = "mocha";
     accent = "teal";
   };
