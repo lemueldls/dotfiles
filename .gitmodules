@@ -1,9 +1,3 @@
 [submodule "configs"]
 	path = configs
 	url = git@github.com:lemueldls/configs.git
-[submodule "shell"]
-	path = shell
-	url = git@github.com:lemueldls/shell.git
-[submodule "cli"]
-	path = cli
-	url = git@github.com:lemueldls/cli.git
