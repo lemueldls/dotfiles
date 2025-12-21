@@ -108,22 +108,15 @@ in
 
     file = with config.lib.meta; {
       ".config/btop".source = mkMutableSymlink ./configs/btop;
-      ".config/fastfetch".source = mkMutableSymlink ./configs/fastfetch;
       ".config/firefox".source = mkMutableSymlink ./configs/firefox;
-      # ".config/fish".source = mkMutableSymlink ./configs/fish;
-      # ".config/foot".source = mkMutableSymlink ./.config/foot;
-      ".config/hypr".source = mkMutableSymlink ./configs/hypr;
-      # ".config/micro".source = mkMutableSymlink ./configs/micro;
-      ".config/spicetify".source = mkMutableSymlink ./configs/spicetify;
-      ".config/thunar".source = mkMutableSymlink ./configs/thunar;
       ".config/uwsm".source = mkMutableSymlink ./configs/uwsm;
+
       ".config/Code/User/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
       ".config/Code/User/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
       ".config/Code/User/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
+
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
-      ".config/zen/userChrome.css".source = mkMutableSymlink ./configs/zen/userChrome.css;
-      # ".config/starship.toml".source = mkMutableSymlink ./configs/starship.toml;
 
       "Pictures/Wallpapers".source = mkMutableSymlink ./wallpapers;
     };

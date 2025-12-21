@@ -1,0 +1,92 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "disable_ai": true,
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "icon_theme": "Symbols Icon Theme",
+  "project_panel": { "dock": "right" },
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    },
+    "font_family": "Iosevka Term",
+    "font_fallbacks": [
+      "Sarasa Term SC",
+      "Sarasa Term J",
+      "Sarasa Term K",
+      "Symbols Nerd Font",
+      "Noto Color Emoji"
+    ]
+  },
+  "tab_size": 2,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 13,
+  // "buffer_font_features": {
+  //   "calt": false
+  // },
+  "ui_font_family": "Iosevka Book",
+  "ui_font_fallbacks": [
+    "Sarasa UI SC",
+    "Sarasa UI J",
+    "Sarasa UI K",
+    "Noto Color Emoji",
+    "Symbols Nerd Font"
+  ],
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "buffer_font_family": "Iosevka Code",
+  "buffer_font_fallbacks": [
+    "Sarasa Mono SC",
+    "Sarasa Mono J",
+    "Sarasa Mono K",
+    "Noto Color Emoji",
+    "Symbols Nerd Font"
+  ],
+  "languages": {
+    "Rust": { "tab_size": 4 },
+    "Nix": { "language_servers": ["nixd", "!nil"] },
+    "QML": {
+      "formatter": {
+        "external": {
+          "command": "sh",
+          "arguments": [
+            "-c",
+            "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"
+          ]
+        }
+      }
+    }
+  },
+  "lsp": {
+    // "nixd": {
+    //   "settings": {
+    //     "nixpkgs": {
+    //       "expr": "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}"
+    //     },
+    //     "formatting": {
+    //       "command": ["alejandra"]
+    //     }
+    //   }
+    // },
+    "qml": {
+      "binary": {
+        "arguments": ["-E"]
+      }
+    }
+  }
+}
