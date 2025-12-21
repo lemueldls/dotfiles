@@ -2,7 +2,7 @@
   description = "Home Manager configuration";
 
   inputs = {
-    self.submodules = true;
+    # self.submodules = true;
 
     nixpkgs.url = "nixpkgs/nixos-25.11";
 
@@ -21,18 +21,6 @@
     niri = {
       # url = "github:sodiboo/niri-flake";
       url = "github:LuckShiba/niri-flake/includes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-cli = {
-      # url = ./cli;
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-shell = {
-      # url = ./shell;
-      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -70,8 +58,6 @@
             inputs.pam-shim.homeModules.default
 
             inputs.niri.homeModules.niri
-
-            inputs.caelestia-shell.homeManagerModules.default
             inputs.dms.homeModules.dank-material-shell
             inputs.dms.homeModules.niri
 
