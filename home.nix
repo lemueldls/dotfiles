@@ -11,6 +11,7 @@ let
   username = "lemuel";
   homeDirectory = "/home/" + username;
   dotsDirectory = "${homeDirectory}/Projects/dotfiles";
+  assets = inputs.assets.packages.x86_64-linux;
 in
 {
   imports = [ ./modules/desktop.nix ];
@@ -50,11 +51,13 @@ in
       extra-substituters = [
         "https://nix-community.cachix.org"
         "https://devenv.cachix.org"
+        "https://lemueldls.cachix.org"
         "https://niri.cachix.org"
       ];
       extra-trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        "lemueldls.cachix.org-1:aA3BhKvBO5krZ577ISCfJkIFhvYjvwTe7fIfu9J/+Ho="
         "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
       ];
     };
@@ -89,6 +92,7 @@ in
       nix
       nixd
       nixfmt-rfc-style
+      cachix
       devenv
 
       # Build tools
@@ -98,19 +102,16 @@ in
       kdePackages.qtwayland
       kdePackages.qtsvg
       kdePackages.qt6ct
-      kdePackages.dolphin
+      # kdePackages.dolphin
       kdePackages.gwenview
 
-      cheese
-
-      podman-compose
+      assets.iosevka-book
+      assets.iosevka-slim
+      assets.iosevka-code
+      assets.iosevka-term
     ];
 
     file = with config.lib.meta; {
-      ".config/btop".source = mkMutableSymlink ./configs/btop;
-      ".config/firefox".source = mkMutableSymlink ./configs/firefox;
-      ".config/uwsm".source = mkMutableSymlink ./configs/uwsm;
-
       ".config/Code/User/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
       ".config/Code/User/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
       ".config/Code/User/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
@@ -118,7 +119,7 @@ in
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
 
-      "Pictures/Wallpapers".source = mkMutableSymlink ./wallpapers;
+      "Pictures/Wallpapers".source = "${assets.wallpapers}/share/wallpapers/lemuel/contents/images";
     };
 
     sessionVariables = {

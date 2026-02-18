@@ -5,9 +5,15 @@
     # self.submodules = true;
 
     nixpkgs.url = "nixpkgs/nixos-25.11";
+    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    assets = {
+      url = "github:lemueldls/assets";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -15,7 +21,12 @@
     # Using 'next' branch for full libpam.so.0 API coverage
     pam-shim = {
       url = "github:Cu3PO42/pam_shim/next";
+    };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     niri = {
@@ -29,7 +40,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    catppuccin.url = "github:catppuccin/nix/release-25.11";
   };
 
   outputs =
@@ -56,6 +72,8 @@
             ./home.nix
 
             inputs.pam-shim.homeModules.default
+
+            inputs.plasma-manager.homeModules.plasma-manager
 
             inputs.niri.homeModules.niri
             inputs.dms.homeModules.dank-material-shell

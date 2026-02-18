@@ -1,22 +1,13 @@
 { pkgs, ... }:
 {
-  home.packages =
-    with pkgs;
-    let
-      iosevka = callPackage ./iosevka.nix { };
-    in
-    [
-      # libre-baskerville
-      (callPackage ./nerd-font-patch.nix { } iosevka.book)
-      (callPackage ./nerd-font-patch.nix { } iosevka.code)
-      (callPackage ./nerd-font-patch.nix { } iosevka.term)
-      nerd-fonts.symbols-only
-      # recursive
-      sarasa-gothic
-      noto-fonts-color-emoji
-      material-symbols
-      # symbola
-    ];
+  home.packages = with pkgs; [
+    nerd-fonts.symbols-only
+    # recursive
+    # sarasa-gothic
+    noto-fonts-color-emoji
+    material-symbols
+    # symbola
+  ];
 
   fonts.fontconfig = {
     enable = true;
@@ -36,7 +27,7 @@
         "Noto Color Emoji"
       ];
       monospace = [
-        "Iosevka Code"
+        "IosevkaCode Nerd Font"
         "Sarasa Mono SC"
         "Sarasa Mono J"
         "Sarasa Mono K"

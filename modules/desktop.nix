@@ -5,6 +5,10 @@
     ./programs
   ];
 
+  programs.plasma = {
+    enable = true;
+  };
+
   catppuccin = {
     enable = true;
     flavor = "mocha";
