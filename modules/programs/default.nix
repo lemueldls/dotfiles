@@ -16,6 +16,14 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
+      matchBlocks = {
+        "tangled.org" = {
+          hostname = "tangled.org";
+          user = "git";
+          identityFile = "~/.ssh/id_ed25519";
+          addressFamily = "inet";
+        };
+      };
     };
 
     jujutsu = {
@@ -40,9 +48,6 @@
           bind ctrl-c __fish_cancel_commandline
         '';
       };
-      # interactiveShellInit = ''
-      #   cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
-      # '';
       loginShellInit = ''
         fnm env --use-on-cd --shell fish | source
       '';
@@ -60,17 +65,6 @@
       tmux.enableShellIntegration = true;
     };
 
-    # nushell = {
-    #   enable = true;
-    #   shellAliases = {
-    #     hx = "helix";
-    #   };
-    #   settings = {
-    #     buffer_editor = "helix";
-    #     show_banner = false;
-    #   };
-    # };
-
     zoxide = {
       enable = true;
     };
@@ -85,7 +79,7 @@
 
     kitty = {
       enable = true;
-      font.name = "Iosevka Custom";
+      font.name = "IosevkaTerm Nerd Font";
       settings = {
         window_padding_width = 8;
         cursor_trail = 1;
@@ -98,12 +92,12 @@
         return {
           font_size = 11.0,
           font = wezterm.font_with_fallback {
-            "Iosevka Term",
+            "IosevkaTerm Nerd Font",
             "Sarasa Term SC",
             "Sarasa Term J",
             "Sarasa Term K",
           },
-          color_scheme = "Catppuccin Mocha",
+          color_scheme = "dank-theme",
           hide_tab_bar_if_only_one_tab = true,
         }
       '';

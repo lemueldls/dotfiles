@@ -33,7 +33,7 @@
         "explorer.fileNesting.enabled" = true;
         "explorer.fileNesting.expand" = false;
         "editor.tabSize" = 2;
-        "editor.fontFamily" = "'Iosevka Code', 'Noto Sans Mono CJK SC', monospace";
+        "editor.fontFamily" = "'IosevkaCode Nerd Font', 'Noto Sans Mono CJK SC', monospace";
         "editor.semanticHighlighting.enabled" = true;
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
@@ -41,7 +41,7 @@
           "source.fixAll.eslint" = "always";
         };
         "editor.gotoLocation.multipleDefinitions" = "goto";
-        "terminal.integrated.fontFamily" = "'Iosevka Term', 'Noto Sans Mono CJK SC', monospace";
+        "terminal.integrated.fontFamily" = "'IosevkaTerm Nerd Font', 'Noto Sans Mono CJK SC', monospace";
         "terminal.integrated.defaultProfile.linux" = "fish";
         "terminal.integrated.enableImages" = true;
         "terminal.integrated.profiles.linux" = {

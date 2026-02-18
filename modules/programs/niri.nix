@@ -1,27 +1,29 @@
 {
   lib,
-  pkgs,
+  inputs,
   ...
 }:
 {
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    # package = pkgs.niri;
 
     settings = {
       hotkey-overlay = {
         skip-at-startup = true;
       };
 
-      includes = lib.mkMerge [
-        (lib.mkAfter [
-          "dms/alttab.kdl"
-          "dms/binds.kdl"
-          "dms/colors.kdl"
-          "dms/layout.kdl"
-          "dms/wpblur.kdl"
-        ])
-      ];
+      # spawn-at-startup = [
+      #   { command = [ "/usr/lib/polkit-kde-authentication-agent-1" ]; }
+      # ];
+
+      environment = {
+        QT_QPA_PLATFORM_THEME = "qt6ct";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+
+        # DMS_DISABLE_POLKIT = "1";
+      };
     };
   };
 
@@ -29,18 +31,10 @@
     enable = true;
 
     niri = {
-      enableKeybinds = true;
       enableSpawn = true;
+      includes.enable = true;
     };
 
-    default.settings = {
-      theme = "dark";
-      dynamicTheming = true;
-    };
-
-    default.session = {
-    };
+    dgop.package = inputs.dgop.packages.x86_64-linux.default;
   };
-
-  # systemd.user.services.niri-flake-polkit.enable = false;
 }
