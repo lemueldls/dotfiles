@@ -18,7 +18,9 @@
       enableDefaultConfig = false;
       matchBlocks = {
         "github.com" = {
-          hostname = "github.org";
+          port = 443;
+          user = "git";
+          hostname = "ssh.github.com";
           identityFile = "~/.ssh/git";
         };
         "tangled.org" = {
