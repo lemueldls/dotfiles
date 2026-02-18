@@ -17,11 +17,19 @@
       enable = true;
       enableDefaultConfig = false;
       matchBlocks = {
+        "github.com" = {
+          hostname = "github.org";
+          identityFile = "~/.ssh/git";
+        };
         "tangled.org" = {
-          hostname = "tangled.org";
           user = "git";
-          identityFile = "~/.ssh/id_ed25519";
+          hostname = "tangled.org";
+          identityFile = "~/.ssh/git";
           addressFamily = "inet";
+        };
+        "aur.archlinux.org" = {
+          user = "aur";
+          identityFile = "~/.ssh/aur";
         };
       };
     };
@@ -30,8 +38,8 @@
       enable = true;
       settings = {
         user = {
-          email = "26912197+lemueldls@users.noreply.github.com";
           name = "Lemuel DLS";
+          email = "git@lemueldls.dev";
         };
       };
     };

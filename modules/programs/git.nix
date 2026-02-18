@@ -6,7 +6,7 @@
     settings = {
       user = {
         name = "Lemuel DLS";
-        email = "26912197+lemueldls@users.noreply.github.com";
+        email = "git@lemueldls.dev";
       };
       commit.gpgSign = true;
       safe.directory = "/opt/flutter";
