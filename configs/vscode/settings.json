@@ -1,23 +1,26 @@
 {
   "editor.cursorSmoothCaretAnimation": "on",
-  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[less]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[html]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[less]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
   "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
-  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "cSpell.diagnosticLevel": "Hint",
-  "catppuccin-noctis-icons.hidesExplorerArrows": false,
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always" },
-  "editor.fontFamily": "'Iosevka Code', 'Sarasa Mono SC', 'Sarasa Mono J', 'Sarasa Mono K', 'Noto Color Emoji', 'Symbols Nerd Font', monospace",
+  "[scss]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "oxc.typeAware": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always", "source.fixAll.oxc": "always" },
+  "editor.fontFamily": "'IosevkaCode Nerd Font', 'Sarasa Mono SC', 'Sarasa Mono J', 'Sarasa Mono K', 'Noto Color Emoji', 'Symbols Nerd Font', monospace",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.gotoLocation.multipleDefinitions": "goto",
@@ -47,7 +50,7 @@
   ],
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.enableImages": true,
-  "terminal.integrated.fontFamily": "'Iosevka Term', 'Sarasa Term SC', 'Sarasa Term J', 'Sarasa Term K', 'Noto Color Emoji', 'Symbols Nerd Font', monospace",
+  "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font', 'Sarasa Term SC', 'Sarasa Term J', 'Sarasa Term K', 'Noto Color Emoji', 'Symbols Nerd Font', monospace",
   "terminal.integrated.profiles.linux": {
     "bash": { "icon": "terminal-bash", "path": "bash" },
     "fish": { "path": "fish" },
@@ -62,14 +65,22 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "lean4.alwaysAskBeforeInstallingLeanVersions": true,
+  "codesnap.realLineNumbers": true,
+  "codesnap.showWindowTitle": true,
+  "codesnap.shutterAction": "copy",
+  "codesnap.transparentBackground": true,
+  "catppuccin-noctis-icons.hidesExplorerArrows": false,
+  "chat.tools.terminal.autoApprove": {
+    "cargo build": true
+  },
+  "workbench.activityBar.location": "top",
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
-  "codesnap.realLineNumbers": true,
-  "codesnap.showWindowTitle": true,
-  "codesnap.shutterAction": "copy",
-  "codesnap.transparentBackground": true
+  }
 }

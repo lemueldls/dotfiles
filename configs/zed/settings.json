@@ -7,20 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "disable_ai": true,
+  // "disable_ai": true,
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "google",
+      "model": "gemini-2.5-flash-lite"
     }
   },
-  "icon_theme": "Symbols Icon Theme",
   "project_panel": { "dock": "right" },
   "terminal": {
     "shell": {
       "program": "fish"
     },
-    "font_family": "Iosevka Term",
+    "font_family": "IosevkaTerm Nerd Font",
     "font_fallbacks": [
       "Sarasa Term SC",
       "Sarasa Term J",
@@ -45,11 +49,16 @@
     "Symbols Nerd Font"
   ],
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
-  "buffer_font_family": "Iosevka Code",
+  "icon_theme": {
+    "mode": "system",
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte"
+  },
+  "buffer_font_family": "IosevkaCode Nerd Font",
   "buffer_font_fallbacks": [
     "Sarasa Mono SC",
     "Sarasa Mono J",
@@ -64,10 +73,7 @@
       "formatter": {
         "external": {
           "command": "sh",
-          "arguments": [
-            "-c",
-            "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"
-          ]
+          "arguments": ["-c", "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"]
         }
       }
     }
