@@ -1,5 +1,35 @@
 {
-  description = "Home Manager configuration";
+  description = "Dotfiles using Home Manager.";
+
+  nixConfig = {
+    auto-optimise-store = true;
+
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    substituters = [ "https://cache.nixos.org" ];
+    trusted-users = [
+      "root"
+      "@wheel"
+      "nixbld"
+      "lemuel"
+    ];
+    trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://devenv.cachix.org"
+      "https://lemueldls.cachix.org"
+      "https://niri.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "lemueldls.cachix.org-1:aA3BhKvBO5krZ577ISCfJkIFhvYjvwTe7fIfu9J/+Ho="
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+    ];
+  };
 
   inputs = {
     # self.submodules = true;
@@ -9,6 +39,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -70,6 +105,8 @@
 
           modules = [
             ./home.nix
+
+            # inputs.stylix.homeModules.stylix
 
             inputs.pam-shim.homeModules.default
 

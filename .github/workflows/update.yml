@@ -1,0 +1,64 @@
+name: Update
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: dotfiles
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set up SSH signing key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_SIGNING_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          git config --global gpg.format ssh
+          git config --global user.signingKey ~/.ssh/id_ed25519
+          git config --global user.name "Lemuel DLS"
+          git config --global user.email "noreply@git.lemueldls.dev"
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: cachix/cachix-action@v16
+        with:
+          name: lemueldls
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Update flake
+        run: nix flake update
+
+      - name: Add and commit changes
+        run: |
+          git add -A
+          git commit -S -m "chore: update flake" || echo "No changes to commit"
+          git push
+
+      - name: Build flake
+        run: |
+          nix flake archive --json | jq -r '.path,(.inputs|to_entries[].value.path)'
+          nix build --print-out-paths

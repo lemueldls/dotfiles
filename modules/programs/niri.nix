@@ -13,22 +13,29 @@
         skip-at-startup = true;
       };
 
-      # spawn-at-startup = [
-      #   { command = [ "/usr/lib/polkit-kde-authentication-agent-1" ]; }
-      # ];
+      cursor = {
+        theme = "Qogir";
+        size = 24;
+      };
+
+      spawn-at-startup = [
+        { command = [ "/usr/bin/clight" ]; }
+        { command = [ "/usr/lib/polkit-kde-authentication-agent-1" ]; }
+      ];
 
       environment = {
-        QT_QPA_PLATFORM_THEME = "qt6ct";
+        QT_QPA_PLATFORMTHEME = "qt6ct";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
 
-        # DMS_DISABLE_POLKIT = "1";
+        DMS_DISABLE_POLKIT = "1";
       };
     };
   };
 
   programs.dank-material-shell = {
     enable = true;
+    enableSystemMonitoring = true;
 
     niri = {
       enableSpawn = true;

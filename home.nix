@@ -8,6 +8,8 @@
   ...
 }:
 let
+  flake = import ./flake.nix;
+
   username = "lemuel";
   homeDirectory = "/home/" + username;
   dotsDirectory = "${homeDirectory}/Projects/dotfiles";
@@ -33,34 +35,7 @@ in
       # frequency = "daily";
     };
 
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-
-      substituters = [ "https://cache.nixos.org" ];
-      trusted-users = [
-        "root"
-        "@wheel"
-        "nixbld"
-        username
-      ];
-      trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
-      extra-substituters = [
-        "https://nix-community.cachix.org"
-        "https://devenv.cachix.org"
-        "https://lemueldls.cachix.org"
-        "https://niri.cachix.org"
-      ];
-      extra-trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        "lemueldls.cachix.org-1:aA3BhKvBO5krZ577ISCfJkIFhvYjvwTe7fIfu9J/+Ho="
-        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-      ];
-    };
+    settings = flake.nixConfig;
   };
 
   home = {
@@ -105,10 +80,11 @@ in
       # kdePackages.dolphin
       kdePackages.gwenview
 
-      assets.iosevka-book
-      assets.iosevka-slim
-      assets.iosevka-code
-      assets.iosevka-term
+      assets.fonts.iosevka-book
+      assets.fonts.iosevka-slim
+      assets.fonts.iosevka-code
+      assets.fonts.iosevka-term
+      # assets.fonts.sarasa-gothic
     ];
 
     file = with config.lib.meta; {
@@ -119,7 +95,9 @@ in
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
 
-      "Pictures/Wallpapers".source = "${assets.wallpapers}/share/wallpapers/lemuel/contents/images";
+      ".config/niri/dms".source = mkMutableSymlink ./configs/dms;
+
+      "Pictures/Wallpapers".source = "${assets.wallpapers}/share/wallpapers/assets/contents/images";
     };
 
     sessionVariables = {
@@ -129,12 +107,25 @@ in
 
   nixpkgs = {
     inherit overlays;
+
     config = {
       inherit overlays allowUnfree;
     };
   };
 
   targets.genericLinux.enable = true;
+
+  # stylix = {
+  #   enable = true;
+
+  #   cursor = {
+  #     package = pkgs.qogir-icon-theme;
+  #     name = "Qogir";
+  #     size = 24;
+  #   };
+
+  #   targets.niri.enable = false;
+  # };
 
   pamShim.enable = true;
 

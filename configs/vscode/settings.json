@@ -77,10 +77,12 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
+  "haskell.manageHLS": "PATH",
   "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
     "scminput": false
-  }
+  },
+  "mdc.enableFormatting": true,
 }

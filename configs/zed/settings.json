@@ -9,20 +9,19 @@
 {
   // "disable_ai": true,
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "agent": {
-    "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-lite"
-    }
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
+    },
   },
   "project_panel": { "dock": "right" },
   "terminal": {
     "shell": {
-      "program": "fish"
+      "program": "fish",
     },
     "font_family": "IosevkaTerm Nerd Font",
     "font_fallbacks": [
@@ -30,8 +29,8 @@
       "Sarasa Term J",
       "Sarasa Term K",
       "Symbols Nerd Font",
-      "Noto Color Emoji"
-    ]
+      "Noto Color Emoji",
+    ],
   },
   "tab_size": 2,
   "base_keymap": "VSCode",
@@ -46,17 +45,17 @@
     "Sarasa UI J",
     "Sarasa UI K",
     "Noto Color Emoji",
-    "Symbols Nerd Font"
+    "Symbols Nerd Font",
   ],
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Mocha",
   },
   "icon_theme": {
     "mode": "system",
     "dark": "Catppuccin Mocha",
-    "light": "Catppuccin Latte"
+    "light": "Catppuccin Latte",
   },
   "buffer_font_family": "IosevkaCode Nerd Font",
   "buffer_font_fallbacks": [
@@ -64,19 +63,26 @@
     "Sarasa Mono J",
     "Sarasa Mono K",
     "Noto Color Emoji",
-    "Symbols Nerd Font"
+    "Symbols Nerd Font",
   ],
   "languages": {
     "Rust": { "tab_size": 4 },
     "Nix": { "language_servers": ["nixd", "!nil"] },
+    "C++": {
+      "format_on_save": "on",
+      "tab_size": 2,
+    },
     "QML": {
       "formatter": {
         "external": {
           "command": "sh",
-          "arguments": ["-c", "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp"]
-        }
-      }
-    }
+          "arguments": [
+            "-c",
+            "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp",
+          ],
+        },
+      },
+    },
   },
   "lsp": {
     // "nixd": {
@@ -91,8 +97,8 @@
     // },
     "qml": {
       "binary": {
-        "arguments": ["-E"]
-      }
-    }
-  }
+        "arguments": ["-E"],
+      },
+    },
+  },
 }
