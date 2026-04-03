@@ -132,7 +132,7 @@ in
   services = {
     home-manager = {
       autoUpgrade = {
-        enable = true;
+        enable = false;
         frequency = "weekly";
         useFlake = true;
         flakeDir = dotsDirectory;
