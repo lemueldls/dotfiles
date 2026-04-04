@@ -56,5 +56,5 @@ jobs:
 
       - name: Build flake
         run: |
-          nix flake archive --json | jq -r '.path,(.inputs|to_entries[].value.path)'
-          nix build --print-out-paths
+          nix flake archive --json | jq -r '.path,(.inputs|to_entries[].value.path)' | cachix push lemueldls
+          nix build .#homeConfigurations.lemuel.activationPackage --json | jq -r '.[0].outputs.out' | cachix push lemueldls
