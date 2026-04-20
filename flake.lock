@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1776565486,
-        "narHash": "sha256-4i+qCdg08vF9/zdke3xBmY15LS7dDf6ekmxp4k/eOXA=",
+        "lastModified": 1776651913,
+        "narHash": "sha256-Qvv91yH2spYFrFqEIKATSfYrMxkZJQgaDEqYQV3Sak8=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "33282574cae1e99161a5338d006bac2e6d435d29",
+        "rev": "742f6029e44772401fc528935f4bb9fdb2c9771b",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
     "iosevka-upstream": {
       "flake": false,
       "locked": {
-        "lastModified": 1776045857,
-        "narHash": "sha256-L1CLcPAiGcbZTjT1LKvTlBaxG7AwMsNf+X3D/KYQaN8=",
+        "lastModified": 1776596285,
+        "narHash": "sha256-eOh1jdrgaMYhqxP+QSCBxqhkJUGYrWLTkYwGmKSNrRA=",
         "owner": "be5invis",
         "repo": "Iosevka",
-        "rev": "dc156e65c0d9c06dbe93cb46afcc79a9567b9a78",
+        "rev": "8eb49cd124eb96e3817dd660f720c8d2885d2864",
         "type": "github"
       },
       "original": {
