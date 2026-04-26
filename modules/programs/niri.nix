@@ -19,7 +19,6 @@
       };
 
       spawn-at-startup = [
-        { command = [ "/usr/bin/clight" ]; }
         { command = [ "/usr/lib/polkit-kde-authentication-agent-1" ]; }
       ];
 

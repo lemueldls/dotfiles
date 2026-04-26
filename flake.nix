@@ -65,8 +65,8 @@
     };
 
     niri = {
-      # url = "github:sodiboo/niri-flake";
-      url = "github:LuckShiba/niri-flake/includes";
+      url = "github:sodiboo/niri-flake";
+      # url = "github:LuckShiba/niri-flake/includes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
