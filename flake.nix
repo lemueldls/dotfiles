@@ -66,7 +66,6 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
-      # url = "github:LuckShiba/niri-flake/includes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -87,12 +86,16 @@
     inputs:
     let
       system = "x86_64-linux";
-      overlays = [ ];
+      overlays = [ inputs.niri.overlays.niri ];
       allowUnfree = true;
       pkgs = import inputs.nixpkgs {
         inherit system overlays;
         config.allowUnfree = allowUnfree;
       };
+      # unstable = import inputs.nixpkgs-unstable {
+      #   inherit system overlays;
+      #   config.allowUnfree = allowUnfree;
+      # };
     in
     {
       homeConfigurations = {
@@ -101,6 +104,7 @@
 
           extraSpecialArgs = {
             inherit inputs overlays allowUnfree;
+            # inherit unstable;
           };
 
           modules = [

@@ -5,6 +5,7 @@
   inputs,
   overlays,
   allowUnfree,
+  # unstable,
   ...
 }:
 let
@@ -102,6 +103,7 @@ in
 
     sessionVariables = {
       EDITOR = "helix";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
     };
   };
 
@@ -142,6 +144,8 @@ in
         frequency = "weekly";
       };
     };
+
+    ssh-agent.enable = true;
 
     # wl-clip-persist = {
     #   enable = true;

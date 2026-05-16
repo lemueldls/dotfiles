@@ -1,6 +1,7 @@
 {
-  config,
-  pkgs,
+  # config,
+  # pkgs,
+  # unstable,
   ...
 }:
 {
@@ -21,13 +22,15 @@
           port = 443;
           user = "git";
           hostname = "ssh.github.com";
+          addKeysToAgent = "yes";
           identityFile = "~/.ssh/git";
         };
         "tangled.org" = {
           user = "git";
           hostname = "tangled.org";
-          identityFile = "~/.ssh/git";
           addressFamily = "inet";
+          addKeysToAgent = "yes";
+          identityFile = "~/.ssh/git";
         };
         "aur.archlinux.org" = {
           user = "aur";
@@ -41,7 +44,7 @@
       settings = {
         user = {
           name = "Lemuel DLS";
-          email = "git@lemueldls.dev";
+          email = "noreply@git.lemueldls.dev";
         };
       };
     };
@@ -58,9 +61,13 @@
           bind ctrl-c __fish_cancel_commandline
         '';
       };
-      loginShellInit = ''
-        fnm env --use-on-cd --shell fish | source
-      '';
+      # loginShellInit = ''
+      #   fnm env --use-on-cd --shell fish | source
+      # '';
+      # interactiveShellInit = ''
+      #   set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent"
+      #   # ssh-add ~/.ssh/git
+      # '';
     };
 
     tmux = {
@@ -115,6 +122,7 @@
 
     # quickshell = {
     #   enable = true;
+    #   package = unstable.quickshell;
     # };
 
     # zed-editor = {
