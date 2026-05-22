@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1779246220,
-        "narHash": "sha256-e7ohlRh82nQrtBNLHTHcBd9aoZeDD6MH4gXkR8kEn90=",
+        "lastModified": 1779414001,
+        "narHash": "sha256-+T+BN+AI8JKraS7yfkhGJWP6TiHu0jLHycC0lxPZvA8=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "0be233261066b1d97ede0e97698c31cee900c6a7",
+        "rev": "6cd04d4e8b629bd95aa5ef86c1ff88768c8fc8a2",
         "type": "github"
       },
       "original": {
@@ -325,11 +325,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1779213531,
-        "narHash": "sha256-B4pOfIX6CpCD/cKckwNP3DYDxEUBG1x/K3vqwYNonx4=",
+        "lastModified": 1779378331,
+        "narHash": "sha256-A8MBNRY+FDLVJ64HWjrcdbtahlAey3fvca/hu9q07yA=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "f4027707431220ffb660ae0da0e03fd5229ab4d9",
+        "rev": "f539bec9083f42a406db82e3d974162281e69d12",
         "type": "github"
       },
       "original": {
@@ -358,11 +358,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1778858756,
-        "narHash": "sha256-9VvAHNoi2wd0fxLfJOPChZMS7l6rhCtAJmpd59Hv5rw=",
+        "lastModified": 1779374863,
+        "narHash": "sha256-qKWgJ2MUODpg+b8tOwWMdMKREvs8TdGBz63SHaQZCeA=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "cd5ac3e5e04bb5a11276d3c755fa25242818e05f",
+        "rev": "4294948cf1c70c50e938383c2c865d7ca455ac7e",
         "type": "github"
       },
       "original": {
