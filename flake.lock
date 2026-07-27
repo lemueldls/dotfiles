@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1784947442,
-        "narHash": "sha256-UCmwkZ9u7aR/4mcJhLrNWO3Y53Aoer0Gfx7T/xGg1jY=",
+        "lastModified": 1785121010,
+        "narHash": "sha256-1uoMheGf4g7QA7ETpZZqLomENlg5f/cXygZAhOH8zyo=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "a9933d5a0bb35d751b6142f0190ace15249fc21e",
+        "rev": "ce75aee1fd41fe8fc180dd7a9eb004ef974fec79",
         "type": "github"
       },
       "original": {
@@ -154,11 +154,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784341117,
-        "narHash": "sha256-7VjoVZu+8PC41ZDQ3umi/EXsU3sCLNyRfxZrfJKHy+E=",
+        "lastModified": 1785111455,
+        "narHash": "sha256-aTNuC9NDBnYAeEtFsleeUwmGX3AZlKOutbl+LQRPkmQ=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "74896fb87cb9e4bb866dbabcfd754e3e649ad0c7",
+        "rev": "069ddab041c738236a8910e4c39b65d9628d3018",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
     "iosevka-upstream": {
       "flake": false,
       "locked": {
-        "lastModified": 1782555506,
-        "narHash": "sha256-OwCtp/WufMCzuaPTDCr2siorUC52zgM2e80DyshzsZw=",
+        "lastModified": 1785069515,
+        "narHash": "sha256-Vql44qexuYxiCGmjiQUMilIR488KSHpCDjOgPIEl8L8=",
         "owner": "be5invis",
         "repo": "Iosevka",
-        "rev": "6828cb0bd569992bb19565a5e448540de3b50541",
+        "rev": "ca3ad8e280e2f0b614a5a7721b047daaf023713d",
         "type": "github"
       },
       "original": {
