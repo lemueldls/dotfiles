@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1785809771,
-        "narHash": "sha256-DOXCAwE34Fb7XOAznWeYynFCAkj35TU7mxTK645O2Co=",
+        "lastModified": 1785897482,
+        "narHash": "sha256-leGGYD6HZzGHI2DEQZ7gisff1l2Ru/Z3oTk7RtzTzHM=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "16d463b053bec5108ef543ed84edce4863789011",
+        "rev": "9880b55169f7bc86f39bbc01637a3be84bff0c71",
         "type": "github"
       },
       "original": {
@@ -341,11 +341,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1785753837,
-        "narHash": "sha256-Lyy16y+SnRqM+vwODCWYYwwvYkKMPPpc1p6l4wevR0M=",
+        "lastModified": 1785857305,
+        "narHash": "sha256-25q05zpF1sqOCxPPUG9DPPGd+EDW7SiAOWCzBWRS7r0=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "3c93dc3656160f3aedb21d3acf82b5dfe868a539",
+        "rev": "9ee3e13b60643448228353097880521658b2fe0e",
         "type": "github"
       },
       "original": {
