@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1786070244,
-        "narHash": "sha256-DeIOmu1p4tNvIgNSRCMuFKrbOERS3FgvhCSaENKWj6Q=",
+        "lastModified": 1786239021,
+        "narHash": "sha256-Tf5Noddds1Be4QYBsBQS98XRPwLkBmj1KQfw1qW12eI=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "9e643465544f31d6e7e2264dbe899f10df84235d",
+        "rev": "7e0768c05605aea8d307009bf2ddc8337604c710",
         "type": "github"
       },
       "original": {
@@ -133,11 +133,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785966402,
-        "narHash": "sha256-Tmsh3vJj5/shLANhzodqQWI1zsGADCW04zomLpB7HfM=",
+        "lastModified": 1786198551,
+        "narHash": "sha256-+vFzppOik5+KP+oz39j1PlIMlLY6R0dKmfhnDqsgYjg=",
         "owner": "AvengeMedia",
         "repo": "dgop",
-        "rev": "d57055f6d9e634aaf4f154fdd448e511267b885b",
+        "rev": "f559f2f31d2a35a29a096df174e688da9cc089c9",
         "type": "github"
       },
       "original": {
