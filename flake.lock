@@ -11,11 +11,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1786928955,
-        "narHash": "sha256-urlR4OXLdEDeggfK3wCo9bO+07agG95sicN1KwgqYjE=",
+        "lastModified": 1787102787,
+        "narHash": "sha256-zeHQPmuD5ILUrUuTF181aA4hDb/OSF3QzAfwxQTxCzI=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "a7f284273fe23d7bd0dd7be526a1a4c48f9e661e",
+        "rev": "e03e52097741499f118a5f32011910265cfe55ac",
         "type": "github"
       },
       "original": {
