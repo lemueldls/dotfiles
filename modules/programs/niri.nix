@@ -7,7 +7,7 @@
 {
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    # package = pkgs.niri-unstable;
 
     settings = {
       hotkey-overlay = {
@@ -20,13 +20,15 @@
       };
 
       spawn-at-startup = [
-        { command = [ "/usr/lib/polkit-kde-authentication-agent-1" ]; }
+        { command = [ "/usr/lib/polkit-kde-authentication-agent-1 &" ]; }
       ];
 
       environment = {
         QT_QPA_PLATFORMTHEME = "qt6ct";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
 
         DMS_DISABLE_POLKIT = "1";
       };
@@ -41,7 +43,5 @@
       enableSpawn = true;
       includes.enable = true;
     };
-
-    dgop.package = inputs.dgop.packages.x86_64-linux.default;
   };
 }

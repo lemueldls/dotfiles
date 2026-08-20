@@ -17,7 +17,7 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks = {
+      settings = {
         "github.com" = {
           port = 443;
           user = "git";
@@ -29,6 +29,12 @@
           user = "git";
           hostname = "tangled.org";
           addressFamily = "inet";
+          addKeysToAgent = "yes";
+          identityFile = "~/.ssh/git";
+        };
+        "codeberg.org" = {
+          user = "git";
+          hostname = "codeberg.org";
           addKeysToAgent = "yes";
           identityFile = "~/.ssh/git";
         };

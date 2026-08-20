@@ -48,26 +48,26 @@ in
     # compatible with. This helps avoid breakage when a new Home Manager release
     # introduces backwards incompatible changes.
     #
-    # You should not change this value, even if you update Home Manager. If you do
+    # You should not change this value, even if you update Home Manager. If you
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "25.11"; # Please read the comment before changing.
+    stateVersion = "26.05"; # Please read the comment before changing.
 
     preferXdgDirectories = true;
     pointerCursor = {
-      gtk.enable = true;
+      enable = true;
       package = pkgs.qogir-icon-theme;
       name = "Qogir";
       size = 24;
     };
 
-    # The home.packages option allows you to install Nix packages into your
-    # environment.
+    # The home.packages option allows you to install Nix packages into
+    # your environment.
     packages = with pkgs; [
       # Nix
       nix
       nixd
-      nixfmt-rfc-style
+      nixfmt
       cachix
       devenv
 
@@ -81,6 +81,8 @@ in
       # kdePackages.dolphin
       kdePackages.gwenview
 
+      proton-pass-cli
+
       assets.fonts.iosevka-book
       assets.fonts.iosevka-slim
       assets.fonts.iosevka-code
@@ -89,21 +91,31 @@ in
     ];
 
     file = with config.lib.meta; {
+      # VS Code
       ".config/Code/User/settings.json".source = mkMutableSymlink ./configs/vscode/settings.json;
       ".config/Code/User/keybindings.json".source = mkMutableSymlink ./configs/vscode/keybindings.json;
       ".config/Code/User/flags.conf".source = mkMutableSymlink ./configs/vscode/flags.conf;
 
+      # Zed
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
 
-      ".config/niri/dms".source = mkMutableSymlink ./configs/dms;
+      # DankMaterialShell
+      ".config/DankMaterialShell/clsettings.json".source = mkMutableSymlink ./configs/dms/clsettings.json;
+      ".config/DankMaterialShell/plugin_settings.json".source =
+        mkMutableSymlink ./configs/dms/plugin_settings.json;
+      ".config/DankMaterialShell/settings.json".source = mkMutableSymlink ./configs/dms/settings.json;
 
+      # Assets
       "Pictures/Wallpapers".source = "${assets.wallpapers}/share/wallpapers/assets/contents/images";
     };
 
     sessionVariables = {
       EDITOR = "helix";
-      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
+      PROTON_PASS_LINUX_KEYRING = "dbus";
+
+      ANDROID_HOME = "$HOME/Android/Sdk";
+      ANDROID_NDK_HOME = "$HOME/Android/Sdk/ndk/25.0.8775105";
     };
   };
 
@@ -116,18 +128,6 @@ in
   };
 
   targets.genericLinux.enable = true;
-
-  # stylix = {
-  #   enable = true;
-
-  #   cursor = {
-  #     package = pkgs.qogir-icon-theme;
-  #     name = "Qogir";
-  #     size = 24;
-  #   };
-
-  #   targets.niri.enable = false;
-  # };
 
   pamShim.enable = true;
 
@@ -145,11 +145,15 @@ in
       };
     };
 
-    ssh-agent.enable = true;
+    # ssh-agent.enable = true;
 
-    # wl-clip-persist = {
-    #   enable = true;
-    # };
+    proton-pass-agent = {
+      enable = true;
+      extraArgs = [
+        "--create-new-identities"
+        "Personal"
+      ];
+    };
 
     kdeconnect = {
       enable = true;

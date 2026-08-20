@@ -5,13 +5,15 @@
     ./programs
   ];
 
-  programs.plasma = {
-    enable = true;
-  };
+  # programs.plasma = {
+  #   enable = true;
+  # };
 
   catppuccin = {
     enable = true;
     flavor = "mocha";
     accent = "teal";
+
+    cache.enable = true;
   };
 }

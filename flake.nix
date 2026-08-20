@@ -34,21 +34,13 @@
   inputs = {
     # self.submodules = true;
 
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+    assets.url = "github:lemueldls/assets";
+
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stylix = {
-      url = "github:nix-community/stylix/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    assets = {
-      url = "github:lemueldls/assets";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -58,11 +50,11 @@
       url = "github:Cu3PO42/pam_shim/next";
     };
 
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
+    # plasma-manager = {
+    #   url = "github:nix-community/plasma-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.home-manager.follows = "home-manager";
+    # };
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -74,12 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    catppuccin.url = "github:catppuccin/nix/release-25.11";
+    catppuccin.url = "github:catppuccin/nix/release-26.05";
   };
 
   outputs =
@@ -114,7 +101,7 @@
 
             inputs.pam-shim.homeModules.default
 
-            inputs.plasma-manager.homeModules.plasma-manager
+            # inputs.plasma-manager.homeModules.plasma-manager
 
             inputs.niri.homeModules.niri
             inputs.dms.homeModules.dank-material-shell

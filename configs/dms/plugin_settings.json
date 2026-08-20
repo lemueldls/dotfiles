@@ -1,0 +1,73 @@
+{
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "calcEngine": "qalc"
+  },
+  "dockerManager": {
+    "enabled": false,
+    "groupByCompose": false,
+    "terminalApp": "wezterm -e"
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "nixMonitor": {
+    "enabled": true
+  },
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "_5ff2de1a_5064_445a_86c4_127105bdaab2_"
+  },
+  "dankClight": {
+    "enabled": false
+  },
+  "screenRecorder": {
+    "enabled": true
+  },
+  "usbManager": {
+    "enabled": true
+  },
+  "dankCleaner": {
+    "enabled": false,
+    "cleanupBrowserCache": false
+  },
+  "dankLauncherKeys": {
+    "enabled": true
+  },
+  "sshConnections": {
+    "enabled": true,
+    "terminal": "wezterm"
+  },
+  "vscodeLauncher": {
+    "enabled": false,
+    "editorMode": "VSCode"
+  },
+  "catWidget": {
+    "enabled": true,
+    "showCpuPercent": false
+  },
+  "powerUsagePlugin": {
+    "enabled": false
+  },
+  "sshMonitor": {
+    "enabled": true
+  },
+  "displayMirror": {
+    "enabled": true
+  },
+  "warpToggle": {
+    "enabled": true
+  },
+  "nixPackageRunner": {
+    "enabled": true,
+    "terminal": "wezterm",
+    "execFlag": "start"
+  }
+}
