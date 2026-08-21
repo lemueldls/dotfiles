@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1787188092,
-        "narHash": "sha256-0tOirrAkXmXmq7S2T0NFmMgXJ06EfFGW5iBlt9RHCEg=",
+        "lastModified": 1787274841,
+        "narHash": "sha256-uLdPdniJOuGoU3MW3vhKmmAnseZXd5lwIKTLLgmAmNM=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "2da126a768b0947c99e13f9e7d6be871762482b9",
+        "rev": "8e444bf49a1a859d000db68a6300b3144c7ae35f",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1787070829,
-        "narHash": "sha256-xe+M6F3syqECh9nH7Fmyxrjs13PtQV3S9o/EbutKz84=",
-        "rev": "0ae2bc1419c3f345984c2629e72e7a631820fa4d",
+        "lastModified": 1787135253,
+        "narHash": "sha256-M5/r2v++FjVhdsxXYMb4BDJ5YLAdCWFt3aZotcshocA=",
+        "rev": "ffb3c9b700e759be2ef13237c9d8f953b32a1e46",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1057639.0ae2bc1419c3/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1058091.ffb3c9b700e7/nixexprs.tar.xz"
       },
       "original": {
         "id": "nixpkgs",
