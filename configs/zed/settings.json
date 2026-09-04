@@ -8,21 +8,36 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // "disable_ai": true,
+  "format_on_save": "on",
+  "diff_view_style": "unified",
+  "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3.5-flash",
+      "enable_thinking": true,
+      "effort": "medium",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "proxy": "",
+  "instrumentation": {
+    "performance_profiler": {
+      "enabled": false,
+    },
+  },
+  "cli_default_open_behavior": "existing_window",
   "edit_predictions": {
+    "allow_data_collection": "no",
     "mode": "subtle",
   },
-  "agent": {
-    "default_profile": "write",
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini",
-    },
-  },
+  "file_scan_exclusions": ["**/AGENTS.md"],
+  "git_panel": { "tree_view": true, "dock": "left" },
   "project_panel": { "dock": "right" },
+  "wrap_guides": [80, 100, 120],
   "terminal": {
-    "shell": {
-      "program": "fish",
-    },
+    "font_size": 13.0,
+    "shell": { "program": "fish" },
     "font_family": "IosevkaTerm Nerd Font",
     "font_fallbacks": [
       "Sarasa Term SC",
@@ -67,37 +82,34 @@
   ],
   "languages": {
     "Rust": { "tab_size": 4 },
-    "Nix": { "language_servers": ["nixd", "!nil"] },
-    "C++": {
-      "format_on_save": "on",
-      "tab_size": 2,
-    },
-    "QML": {
+    "TOML": {
       "formatter": {
+        // "language_server": {
+        //   "name": "taplo"
+        // }
         "external": {
-          "command": "sh",
-          "arguments": [
-            "-c",
-            "tmp=$(mktemp --suffix .qml); cat > $tmp; qmlformat $tmp",
-          ],
+          "command": "taplo",
+          "arguments": ["format", "-"],
         },
       },
     },
+    "Nix": { "language_servers": ["nixd", "!nil"] },
+    "C++": {
+      "tab_size": 2,
+    },
   },
   "lsp": {
-    // "nixd": {
-    //   "settings": {
-    //     "nixpkgs": {
-    //       "expr": "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}"
-    //     },
-    //     "formatting": {
-    //       "command": ["alejandra"]
-    //     }
-    //   }
-    // },
-    "qml": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+      },
+    },
+    "kotlin-lsp": {
       "binary": {
-        "arguments": ["-E"],
+        "path": "/usr/bin/kotlin-lsp",
+        "arguments": ["--stdio"],
       },
     },
   },

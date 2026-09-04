@@ -16,10 +16,15 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
+  "editor.rulers": [
+    { "column": 80, "color": "#313244"},
+    { "column": 100, "color": "#313244"},
+    { "column": 120, "color": "#45475a"},
+  ],
   "[vue]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
   "[yaml]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
   "oxc.typeAware": true,
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always", "source.fixAll.oxc": "always" },
+  "editor.codeActionsOnSave": { "source.fixAll.oxc": "always" },
   "editor.fontFamily": "'IosevkaCode Nerd Font', 'Sarasa Mono SC', 'Sarasa Mono J', 'Sarasa Mono K', 'Noto Color Emoji', 'Symbols Nerd Font', monospace",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -70,19 +75,11 @@
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
   "catppuccin-noctis-icons.hidesExplorerArrows": false,
-  "chat.tools.terminal.autoApprove": {
-    "cargo build": true
-  },
   "workbench.activityBar.location": "top",
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "haskell.manageHLS": "PATH",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": true,
-    "scminput": false
-  },
   "mdc.enableFormatting": true,
+  "intellij.region": "americas",
+  "intellij.dataSharing": "none",
 }
