@@ -73,6 +73,7 @@ in
 
       # Build tools
       just
+      pnpm
 
       # KDE Packages
       kdePackages.qtwayland
@@ -81,7 +82,11 @@ in
       # kdePackages.dolphin
       kdePackages.gwenview
 
-      proton-pass-cli
+      # # fcitx5
+      # kdePackages.fcitx5-qt
+      # kdePackages.fcitx5-with-addons
+      # kdePackages.fcitx5-chinese-addons
+      # # kdePackages.fcitx5-configtool
 
       assets.fonts.iosevka-book
       assets.fonts.iosevka-slim
@@ -112,10 +117,54 @@ in
 
     sessionVariables = {
       EDITOR = "helix";
-      PROTON_PASS_LINUX_KEYRING = "dbus";
 
       ANDROID_HOME = "$HOME/Android/Sdk";
       ANDROID_NDK_HOME = "$HOME/Android/Sdk/ndk/25.0.8775105";
+    };
+  };
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      # systemd.enable = true;
+      addons = with pkgs; [
+        kdePackages.fcitx5-qt
+        kdePackages.fcitx5-chinese-addons
+      ];
+      settings = {
+        globalOptions = {
+          Hotkey = {
+            "TriggerKeys/0" = "Control+Alt+space";
+          };
+        };
+
+        inputMethod = {
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+          };
+          "Groups/0/Items/0" = {
+            Name = "keyboard-us";
+          };
+          "Groups/0/Items/1" = {
+            Name = "pinyin";
+          };
+          GroupOrder = {
+            "0" = "Default";
+          };
+        };
+
+        addons = {
+          pinyin.globalSection = {
+            PageSize = "5";
+            EmojiEnabled = "True";
+            CloudPinyinEnabled = "True";
+            CloudPinyinIndex = "2";
+          };
+        };
+      };
     };
   };
 
@@ -145,15 +194,7 @@ in
       };
     };
 
-    # ssh-agent.enable = true;
-
-    proton-pass-agent = {
-      enable = true;
-      extraArgs = [
-        "--create-new-identities"
-        "Personal"
-      ];
-    };
+    ssh-agent.enable = true;
 
     kdeconnect = {
       enable = true;
