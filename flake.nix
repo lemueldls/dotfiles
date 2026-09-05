@@ -22,12 +22,14 @@
       "https://devenv.cachix.org"
       "https://lemueldls.cachix.org"
       "https://niri.cachix.org"
+      "https://noctalia.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "lemueldls.cachix.org-1:aA3BhKvBO5krZ577ISCfJkIFhvYjvwTe7fIfu9J/+Ho="
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 
@@ -61,8 +63,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/cachix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -104,8 +106,7 @@
             # inputs.plasma-manager.homeModules.plasma-manager
 
             inputs.niri.homeModules.niri
-            inputs.dms.homeModules.dank-material-shell
-            inputs.dms.homeModules.niri
+            inputs.noctalia.homeModules.default
 
             inputs.catppuccin.homeModules.catppuccin
           ];

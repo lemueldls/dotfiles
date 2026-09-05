@@ -88,6 +88,10 @@ in
       # kdePackages.fcitx5-chinese-addons
       # # kdePackages.fcitx5-configtool
 
+      # helix
+      # zed-editor
+      # vscode
+
       assets.fonts.iosevka-book
       assets.fonts.iosevka-slim
       assets.fonts.iosevka-code

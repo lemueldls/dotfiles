@@ -2,5 +2,14 @@
   {
     "key": "ctrl+alt+down",
     "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-revealFileInOS",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+i",
+    "command": "editor.action.inspectTMScopes"
   }
 ]
