@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1790046871,
-        "narHash": "sha256-cHJfPFgn5kItAUZ8Ao5zIcsePP9z02Me1cj7tjpOrgQ=",
+        "lastModified": 1790133451,
+        "narHash": "sha256-jH8J+e2VU3ptGCgl/hIbQYK5Afg4Tdvf/qyBKVexRkg=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "3d18277aada61e4ec43f39fdbd90b3f40dc63672",
+        "rev": "77ce0879499e0ec72f6f79a9698d91d71b0b2eea",
         "type": "github"
       },
       "original": {
@@ -189,11 +189,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1789921291,
-        "narHash": "sha256-uLLUj+TLUmBc6KrUzx76KZdPi5ZkI1ORR9A6lJUIZlo=",
-        "rev": "44a91898084f46797b5fac650c7e8c9ac38c43d4",
+        "lastModified": 1790046670,
+        "narHash": "sha256-OJe62m8gZx4xEAQnMcqH1u31/uu4Xf0q2ykAEHZfgrg=",
+        "rev": "6774f7bc253789b113a4f39285dc0fa100abeacc",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1077143.44a91898084f/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1077996.6774f7bc2537/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -265,11 +265,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790028198,
-        "narHash": "sha256-JKSjpqxdYNgUCbJChm+3rkz5lentMk/bEcZgk7Byqj0=",
+        "lastModified": 1790104132,
+        "narHash": "sha256-yvcudrhnWvWSFS2ujWxAJ7CVdgdiZs2BDGbgn38p1l0=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "e7acd065406bdac81b631e1a336611bfcfaca711",
+        "rev": "61aa22730c434500fd3f2048eba47658b1f20aad",
         "type": "github"
       },
       "original": {
