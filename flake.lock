@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1790219515,
-        "narHash": "sha256-DNXrh+E256iODLwQj2CupHoSXHcVx/eZHgrvKKoyK30=",
+        "lastModified": 1790392807,
+        "narHash": "sha256-Y8dwEun5FmTb1k4xpPv5i0LEwpF4IvmvXzrJHMRlvlc=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "afafeb11e7801aaa5dab34ac1420ec19532e4600",
+        "rev": "d2f72624cc121e608108849622c30b18aa735d6f",
         "type": "github"
       },
       "original": {
@@ -189,11 +189,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1790185690,
-        "narHash": "sha256-EZwz6sR6RLzbKiJJ9QQgXPZ/zA6P8ecfFr/6fwBRfes=",
-        "rev": "4975466d324710c576dc11ad614684e6bd8cad8e",
+        "lastModified": 1790323409,
+        "narHash": "sha256-m4DGo58Fza5ImOegtWOeE18nhpSO1IGzsVA6Lpsb4zw=",
+        "rev": "e94cb152ed51bd6e24eb4a41f1460252beb52cd2",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1078696.4975466d3247/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1079315.e94cb152ed51/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -232,11 +232,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1790218706,
-        "narHash": "sha256-qdM4Skrqq9Xps3OPNi9PWC6/hrWK9eDx5DUAUUaoz+o=",
-        "rev": "c508844df6c28fa6dabc1b6af70f3ccbd65c5201",
+        "lastModified": 1790340521,
+        "narHash": "sha256-7CLWYUrZU7w6X7y3VBohp2TUhQb0CjiEUbPE6WaOdK4=",
+        "rev": "f5c082a40f7571c266e74e80ae2e68aadd8a9fc7",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10529.c508844df6c2/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10620.f5c082a40f75/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -265,11 +265,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790308282,
-        "narHash": "sha256-iqdo8cVVdo3jQxb/+AnaYEQdfY8Q5lALaNsGSBA7YoY=",
+        "lastModified": 1790385836,
+        "narHash": "sha256-oizJ2ro1mdw9YAVeRt5eKpTTBhyn+VI91VmL7Vqv/d0=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "caaad479e7de2b15cac20195b65f7d73b1ed641b",
+        "rev": "be43d120fae7f3bbe39651f9c91dafcf551f2312",
         "type": "github"
       },
       "original": {
