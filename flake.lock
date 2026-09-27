@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1790392807,
-        "narHash": "sha256-Y8dwEun5FmTb1k4xpPv5i0LEwpF4IvmvXzrJHMRlvlc=",
+        "lastModified": 1790481387,
+        "narHash": "sha256-5nQosGmAeuZHQUdgwgC6v+Q5Ivp+qUXsrjgbSjtpSpM=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "d2f72624cc121e608108849622c30b18aa735d6f",
+        "rev": "5941ac4fc51bf5cdf6f4e1c318ddc4493fa00b20",
         "type": "github"
       },
       "original": {
@@ -116,11 +116,11 @@
     "iosevka-upstream": {
       "flake": false,
       "locked": {
-        "lastModified": 1787714465,
-        "narHash": "sha256-qlpa+Rmi/l1Gf4Hgl8O8HbYtdywpNlulFpnUvXQ2ssk=",
+        "lastModified": 1790459617,
+        "narHash": "sha256-JJBsmUtWv8n4IO2AleO/Z1CI2Vbpc1JcwfwJMEUzkLU=",
         "owner": "be5invis",
         "repo": "Iosevka",
-        "rev": "fe27e532e296102a2afb5b27963cf034a50866f7",
+        "rev": "2487637bb71f41b2a66134afd9faa6c316e5a438",
         "type": "github"
       },
       "original": {
@@ -232,11 +232,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1790340521,
-        "narHash": "sha256-7CLWYUrZU7w6X7y3VBohp2TUhQb0CjiEUbPE6WaOdK4=",
-        "rev": "f5c082a40f7571c266e74e80ae2e68aadd8a9fc7",
+        "lastModified": 1790450978,
+        "narHash": "sha256-GM0+sQwNfU1In6UEyBwpwjG3vX3g81kfKvcTlW2muL0=",
+        "rev": "5e2305d577ca00acbba631b05cb1094d172b29f3",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10620.f5c082a40f75/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10718.5e2305d577ca/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -265,11 +265,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790385836,
-        "narHash": "sha256-oizJ2ro1mdw9YAVeRt5eKpTTBhyn+VI91VmL7Vqv/d0=",
+        "lastModified": 1790470113,
+        "narHash": "sha256-DEjHoo4FtHpOZYQXnsTzem2cWk9LZRv0Cx0+ZU8bEWY=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "be43d120fae7f3bbe39651f9c91dafcf551f2312",
+        "rev": "ffbe8d561fbf6f0a0f94f0096168e4d57506f8ed",
         "type": "github"
       },
       "original": {
