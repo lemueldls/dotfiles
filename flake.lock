@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1791693108,
-        "narHash": "sha256-g11zDGLfrmLA6xxGG8qvtJ00jN055X8uqHvgjqB+Dg8=",
+        "lastModified": 1791785219,
+        "narHash": "sha256-Q2/HWXGG+8megTTRNDXHnMzktX24RUkzk3lJyJEUvjo=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "6b712d5d44e437792144aefed4f64eb5c0f8021f",
+        "rev": "721d71497a60b6b981c7caa03fedae50b12c883d",
         "type": "github"
       },
       "original": {
@@ -232,11 +232,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1791426274,
-        "narHash": "sha256-/hsaG8yWXZjTs6WJS2xnerd9VKBgJ8jN8e5ELHLt+bs=",
-        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
+        "lastModified": 1791662279,
+        "narHash": "sha256-tM6MAMxVwetta6uD2aMzoWQ9v5EAaLLmYumiE4jVZeg=",
+        "rev": "6fcc160353f63555b560f25588925133c8f61f2a",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.11576.7c8764b7c7b0/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.11680.6fcc160353f6/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -265,11 +265,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791691567,
-        "narHash": "sha256-gyIWW3/IEayQ4QnVCkYcGVzd8RyvgYywGoFDbA78XYk=",
+        "lastModified": 1791784684,
+        "narHash": "sha256-Ii7MlsvnbjC/xbWdJszGiMqbWFa6qqrQXGKsE3CEFtk=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "4a79d1b2b67b3373bb66dc3dd6854120680d18e3",
+        "rev": "3438582470660e5a8c16444eae84747ce21da26e",
         "type": "github"
       },
       "original": {
@@ -319,11 +319,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785705248,
-        "narHash": "sha256-5AYxMUowuSniMNVtPycnX6IFKNYhbQO2nqe22uoHAmo=",
+        "lastModified": 1791766380,
+        "narHash": "sha256-0V4Vw/N93z8I6FzhSE16LE6tAPa06SIEVIB6gOqDr34=",
         "owner": "lemueldls",
         "repo": "rubify",
-        "rev": "e290dd13ae8ffb96a77bddc2f659968ac819ed48",
+        "rev": "2a4e69f1ccff6a386fcfeb38eb67732770b36e14",
         "type": "github"
       },
       "original": {
