@@ -9,11 +9,11 @@
         "wallpapers": "wallpapers"
       },
       "locked": {
-        "lastModified": 1792111152,
-        "narHash": "sha256-5i8YxHOlpMDA3PcMdCd8lu4bXLAY3DFBcjU2rYeNyCY=",
+        "lastModified": 1795651433,
+        "narHash": "sha256-2aTVjeeQ7ewm3KU4JkuOddBU9Ugeuo1aR/9raXPW3gg=",
         "owner": "lemueldls",
         "repo": "assets",
-        "rev": "ef4267483f21f168ba1e289309c475cf4b480011",
+        "rev": "266688f6efe6e40ed85ddaa0bcf41d3258623a79",
         "type": "github"
       },
       "original": {
@@ -279,11 +279,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795566013,
-        "narHash": "sha256-M9xrFysHI5O/1mkjOxxoqYqh2CiCHT6T/LkK7zhUFUg=",
+        "lastModified": 1795653189,
+        "narHash": "sha256-TuoYmAiNWFg5morOREQ1AO/xXMpgqrK4Ibs2pOpO4sA=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "9ef3714b2daabc415640ed711eb4400a7b86674d",
+        "rev": "b7e90676fed15a8930c2ae74c497689dc14c4e73",
         "type": "github"
       },
       "original": {
