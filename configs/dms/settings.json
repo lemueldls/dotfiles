@@ -84,7 +84,7 @@
   "runningAppsCurrentWorkspace": false,
   "centeringMode": "geometric",
   "greeterAutoLogin": true,
-  "greeterFontFamily": "Iosevka Book",
+  "greeterFontFamily": "Asterism Text",
   "appLauncherGridColumns": 5,
   "appDrawerSectionViewModes": {
     "apps": "list"
@@ -110,8 +110,8 @@
   "launcherLogoMode": "custom",
   "launcherLogoCustomPath": "/home/lemuel/Projects/dotdev/public/logo.png",
   "launcherLogoColorOverride": "primary",
-  "fontFamily": "Iosevka Book",
-  "monoFontFamily": "Iosevka Code",
+  "fontFamily": "Asterism Text",
+  "monoFontFamily": "Asterism Code",
   "batterySuspendBehavior": 2,
   "batteryChargeLimit": 80,
   "batteryAutoPowerSaver": true,
@@ -149,9 +149,7 @@
   "updaterAllowAUR": false,
   "displayNameMode": "model",
   "screenPreferences": {
-    "wallpaper": [
-      "all"
-    ]
+    "wallpaper": ["all"]
   },
   "connectedFrameBarStyleBackups": {
     "default": {
@@ -173,9 +171,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
@@ -296,9 +292,7 @@
       "name": "Bar 2",
       "enabled": true,
       "position": 3,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": false,
       "leftWidgets": [
         {
@@ -469,9 +463,7 @@
         "showDate": true,
         "showAnalogNumbers": false,
         "showAnalogSeconds": true,
-        "displayPreferences": [
-          "all"
-        ]
+        "displayPreferences": ["all"]
       }
     },
     {
@@ -480,9 +472,7 @@
       "name": "Dank Desktop Weather",
       "enabled": false,
       "config": {
-        "displayPreferences": [
-          "all"
-        ]
+        "displayPreferences": ["all"]
       }
     }
   ],

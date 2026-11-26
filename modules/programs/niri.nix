@@ -7,8 +7,6 @@
 {
   programs.niri = {
     enable = true;
-    # niri-unstable is needed for `background-effect` (blur) rules and other
-    # features not yet in niri-stable 25.08
     package = pkgs.niri-unstable;
 
     settings = {
@@ -23,20 +21,15 @@
       # https://github.com/YaLTeR/niri/wiki/Configuration:-Input
       input = {
         keyboard = {
-          # Enable numlock on startup
           numlock = true;
         };
 
         touchpad = {
-          # Enable tap-to-click
           tap = true;
-          # Enable natural (macOS-style) scrolling
           natural-scroll = true;
         };
 
-        # Automatically focus windows under the mouse pointer
-        focus-follows-mouse.enable = true;
-        # Enable workspace back & forth switching
+        focus-follows-mouse.enable = false;
         workspace-auto-back-and-forth = true;
       };
 
@@ -54,12 +47,8 @@
       # ────────────── Layout Configuration ──────────────
       # https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
       layout = {
-        # Gap between windows
         gaps = 16;
-        # Don't auto-center focused column
-        center-focused-column = "never";
-
-        # Needed for noctalia-shell to set the wallpaper
+        # center-focused-column = "never";
         background-color = "transparent";
 
         preset-column-widths = [
@@ -124,12 +113,16 @@
 
         # ─── Applications ───
         "Mod+Return" = {
-          hotkey-overlay.title = "Open Terminal: Wezterm";
-          action.spawn = "wezterm";
+          hotkey-overlay.title = "Open Terminal: kitty";
+          action.spawn = "kitty";
         };
         "Mod+B" = {
           hotkey-overlay.title = "Open Browser: Zen";
           action.spawn = "zen-browser";
+        };
+        "Mod+E" = {
+          hotkey-overlay.title = "Open File Explorer: Nautilus";
+          action.spawn = "nautilus";
         };
 
         # ─── Noctalia ───
@@ -174,6 +167,11 @@
           hotkey-overlay.title = "Emoji Picker: noctalia emoji";
           action.spawn-sh = "noctalia msg panel-toggle launcher /emo";
         };
+
+        # "Mod+P" = {
+        #   repeat = false;
+        #   action.spawn-sh = "wl-mirror $(niri msg --json focused-output | jq -r .name)";
+        # };
 
         # ─── Media Controls ───
         "XF86AudioRaiseVolume" = {
@@ -226,29 +224,29 @@
         "Mod+H".action.focus-column-left = [ ];
         "Mod+Right".action.focus-column-right = [ ];
         "Mod+L".action.focus-column-right = [ ];
-        "Mod+Up".action.focus-window-up = [ ];
+        "Mod+Up".action.focus-workspace-up = [ ];
         "Mod+K".action.focus-window-up = [ ];
-        "Mod+Down".action.focus-window-down = [ ];
+        "Mod+Down".action.focus-workspace-down = [ ];
         "Mod+J".action.focus-window-down = [ ];
 
-        "Mod+CTRL+Left".action.move-column-left = [ ];
-        "Mod+CTRL+H".action.move-column-left = [ ];
-        "Mod+CTRL+Right".action.move-column-right = [ ];
-        "Mod+CTRL+L".action.move-column-right = [ ];
-        "Mod+CTRL+UP".action.move-window-up = [ ];
-        "Mod+CTRL+K".action.move-window-up = [ ];
-        "Mod+CTRL+Down".action.move-window-down = [ ];
-        "Mod+CTRL+J".action.move-window-down = [ ];
+        "Mod+Shift+Left".action.move-column-left = [ ];
+        "Mod+Shift+H".action.move-column-left = [ ];
+        "Mod+Shift+Right".action.move-column-right = [ ];
+        "Mod+Shift+L".action.move-column-right = [ ];
+        "Mod+Shift+UP".action.move-window-to-workspace-up = [ ];
+        "Mod+Shift+K".action.move-window-up = [ ];
+        "Mod+Shift+Down".action.move-window-to-workspace-down = [ ];
+        "Mod+Shift+J".action.move-window-down = [ ];
 
         "Mod+Home".action.focus-column-first = [ ];
         "Mod+End".action.focus-column-last = [ ];
         "Mod+CTRL+Home".action.move-column-to-first = [ ];
         "Mod+CTRL+End".action.move-column-to-last = [ ];
 
-        "Mod+Shift+Left".action.focus-monitor-left = [ ];
-        "Mod+Shift+Right".action.focus-monitor-right = [ ];
-        "Mod+Shift+UP".action.focus-monitor-up = [ ];
-        "Mod+Shift+Down".action.focus-monitor-down = [ ];
+        "Mod+CTRL+Left".action.focus-monitor-left = [ ];
+        "Mod+CTRL+Right".action.focus-monitor-right = [ ];
+        "Mod+CTRL+UP".action.focus-monitor-up = [ ];
+        "Mod+CTRL+Down".action.focus-monitor-down = [ ];
 
         "Mod+Shift+CTRL+Left".action.move-column-to-monitor-left = [ ];
         "Mod+Shift+CTRL+Right".action.move-column-to-monitor-right = [ ];

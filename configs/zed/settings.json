@@ -8,6 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // "disable_ai": true,
+  "cursor_animation": {
+    "enabled": true,
+  },
   "format_on_save": "on",
   "diff_view_style": "unified",
   "agent": {
@@ -38,7 +41,7 @@
   "terminal": {
     "font_size": 13.0,
     "shell": { "program": "fish" },
-    "font_family": "IosevkaTerm Nerd Font",
+    "font_family": "AsterismTerm Nerd Font",
     "font_fallbacks": [
       "Sarasa Term SC",
       "Sarasa Term J",
@@ -54,7 +57,7 @@
   // "buffer_font_features": {
   //   "calt": false
   // },
-  "ui_font_family": "Iosevka Book",
+  "ui_font_family": "Asterism Text",
   "ui_font_fallbacks": [
     "Sarasa UI SC",
     "Sarasa UI J",
@@ -72,7 +75,7 @@
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte",
   },
-  "buffer_font_family": "IosevkaCode Nerd Font",
+  "buffer_font_family": "AsterismCode Nerd Font",
   "buffer_font_fallbacks": [
     "Sarasa Mono SC",
     "Sarasa Mono J",

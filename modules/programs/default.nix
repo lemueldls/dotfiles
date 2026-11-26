@@ -76,6 +76,10 @@
       # '';
     };
 
+    helix = {
+      enable = true;
+    };
+
     tmux = {
       enable = true;
       keyMode = "vi";
@@ -102,7 +106,12 @@
 
     kitty = {
       enable = true;
-      font.name = "IosevkaTerm Nerd Font";
+      font.name = "AsterismTerm Nerd Font";
+      keybindings = {
+        "ctrl+backspace" = "send_text all \\x08";
+        "ctrl+left" = "send_text all \\x1b[1;5D";
+        "ctrl+right" = "send_text all \\x1b[1;5C";
+      };
       settings = {
         window_padding_width = 8;
         cursor_trail = 1;
@@ -115,12 +124,12 @@
         return {
           font_size = 11.0,
           font = wezterm.font_with_fallback {
-            "IosevkaTerm Nerd Font",
+            "AsterismTerm Nerd Font",
             "Sarasa Term SC",
             "Sarasa Term J",
             "Sarasa Term K",
           },
-          color_scheme = "dank-theme",
+          color_scheme = "noctalia",
           hide_tab_bar_if_only_one_tab = true,
         }
       '';

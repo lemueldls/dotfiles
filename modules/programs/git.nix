@@ -5,7 +5,7 @@
     # lfs.enable = true;
     settings = {
       user = {
-        name = "Lemuel DLS";
+        name = "Lemuel";
         email = "noreply@git.lemueldls.dev";
       };
       commit.gpgSign = true;

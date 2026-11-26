@@ -13,21 +13,21 @@
     enable = true;
     defaultFonts = {
       serif = [
-        "Iosevka Book"
+        "Asterism Text"
         "Sarasa Gothic SC"
         "Sarasa Gothic J"
         "Sarasa Gothic K"
         "Noto Color Emoji"
       ];
       sansSerif = [
-        "Iosevka Book"
+        "Asterism Text"
         "Sarasa Gothic SC"
         "Sarasa Gothic J"
         "Sarasa Gothic K"
         "Noto Color Emoji"
       ];
       monospace = [
-        "IosevkaCode Nerd Font"
+        "AsterismCode Nerd Font"
         "Sarasa Mono SC"
         "Sarasa Mono J"
         "Sarasa Mono K"

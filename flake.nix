@@ -37,7 +37,7 @@
     # self.submodules = true;
 
     nixpkgs.url = "nixpkgs/nixos-26.05";
-    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
     assets.url = "github:lemueldls/assets";
 
@@ -81,10 +81,10 @@
         inherit system overlays;
         config.allowUnfree = allowUnfree;
       };
-      # unstable = import inputs.nixpkgs-unstable {
-      #   inherit system overlays;
-      #   config.allowUnfree = allowUnfree;
-      # };
+      unstable = import inputs.nixpkgs-unstable {
+        inherit system overlays;
+        config.allowUnfree = allowUnfree;
+      };
     in
     {
       homeConfigurations = {
@@ -93,7 +93,7 @@
 
           extraSpecialArgs = {
             inherit inputs overlays allowUnfree;
-            # inherit unstable;
+            inherit unstable;
           };
 
           modules = [

@@ -5,7 +5,7 @@
   inputs,
   overlays,
   allowUnfree,
-  # unstable,
+  unstable,
   ...
 }:
 let
@@ -82,20 +82,27 @@ in
       # kdePackages.dolphin
       kdePackages.gwenview
 
-      # # fcitx5
-      # kdePackages.fcitx5-qt
-      # kdePackages.fcitx5-with-addons
-      # kdePackages.fcitx5-chinese-addons
-      # # kdePackages.fcitx5-configtool
-
       # helix
       # zed-editor
       # vscode
+      android-studio
+      android-tools
 
-      assets.fonts.iosevka-book
-      assets.fonts.iosevka-slim
-      assets.fonts.iosevka-code
-      assets.fonts.iosevka-term
+      ast-grep
+
+      github-cli
+
+      inkscape
+
+      uv
+
+      unstable.typst
+
+      monaspace
+      assets.fonts.asterism-text
+      assets.fonts.asterism-slim
+      assets.fonts.asterism-code
+      assets.fonts.asterism-term
       # assets.fonts.sarasa-gothic
     ];
 
@@ -109,21 +116,22 @@ in
       ".config/zed/keymap.json".source = mkMutableSymlink ./configs/zed/keymap.json;
       ".config/zed/settings.json".source = mkMutableSymlink ./configs/zed/settings.json;
 
-      # DankMaterialShell
-      ".config/DankMaterialShell/clsettings.json".source = mkMutableSymlink ./configs/dms/clsettings.json;
-      ".config/DankMaterialShell/plugin_settings.json".source =
-        mkMutableSymlink ./configs/dms/plugin_settings.json;
-      ".config/DankMaterialShell/settings.json".source = mkMutableSymlink ./configs/dms/settings.json;
+      # Cargo
+      ".cargo/config.toml".source = mkMutableSymlink ./configs/cargo/config.toml;
 
       # Assets
       "Pictures/Wallpapers".source = "${assets.wallpapers}/share/wallpapers/assets/contents/images";
     };
 
+    sessionPath = [
+      "${config.home.homeDirectory}/.local/share/pnpm/bin"
+    ];
+
     sessionVariables = {
       EDITOR = "helix";
 
       ANDROID_HOME = "$HOME/Android/Sdk";
-      ANDROID_NDK_HOME = "$HOME/Android/Sdk/ndk/25.0.8775105";
+      ANDROID_NDK_HOME = "$HOME/Android/Sdk/ndk/30.0.16248370";
     };
   };
 

@@ -1,0 +1,68 @@
+[build]
+rustc-wrapper = "/home/lemuel/.cargo/bin/sccache"
+
+[cargo-new]
+vcs = "git"
+
+[unstable]
+# codegen-backend = true
+gc = true
+
+[target.x86_64-unknown-linux-gnu]
+linker = "/usr/bin/clang"
+rustflags = [
+  "-Clink-arg=-fuse-ld=/usr/bin/wild",
+  "-Csplit-debuginfo=unpacked",
+  # "-Zshare-generics=y",
+  "-Zthreads=16",
+  "-Zunstable-options",
+
+  # "-Zcargo-lints",
+  # "-Zpublic-dependency",
+  "-Zembed-metadata=no",
+  "-Znext-solver=coherence",
+]
+
+# [target.x86_64-pc-windows-msvc]
+# linker = "rust-lld.exe"
+# rustflags = ["-Zshare-generics=y"]
+
+# [target.x86_64-pc-windows-gnu]
+# ar = "x86_64-w64-mingw32-gcc-ar"
+# linker = "x86_64-w64-mingw32-gcc"
+
+# [target.x86_64-apple-darwin]
+# rustflags = [
+#   "-Clink-arg=-fuse-ld=/usr/local/bin/zld",
+#   "-Csplit-debuginfo=unpacked",
+#   "-Zshare-generics=y",
+# ]
+
+[profile.dev]
+# codegen-backend = "cranelift"
+codegen-units = 512
+debug = 2
+incremental = true
+opt-level = 1
+split-debuginfo = "unpacked"
+
+# [profile.release]
+# codegen-units = 1
+# debug = 0
+# incremental = false
+# lto = true
+# opt-level = 3
+
+# [profile.dev.package."*"]
+# # codegen-backend = "cranelift"
+# codegen-units = 512
+# debug = 2
+# incremental = true
+# opt-level = 3
+# split-debuginfo = "unpacked"
+
+# [profile.release.package."*"]
+# codegen-units = 1
+# debug = 0
+# incremental = false
+# opt-level = 3
